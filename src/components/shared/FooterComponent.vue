@@ -1,11 +1,42 @@
 <template>
   <footer class="global__footer">
-    <div class="container__fw">
-      <div class="footer__content">
-        <div class="left__wrapper">
-          <img src="/MSCC-logo-inverted.svg" alt />
+    <svg data-v-71f627fa viewBox="0 0 100 100" preserveAspectRatio="none" class="slanted">
+      <polygon data-v-71f627fa points="0,0 100,100 100,100, 0,100" pointer-events="none" />
+    </svg>
+    <div class="footer__container">
+      <div class="container__fw">
+        <div class="footer__content">
+          <div class="top__wrapper">
+            <div class="image">
+              <img src="/MSCC-logo-inverted.svg" alt />
+              <div class="mscc">Mauritius Software Craftsmanship Community</div>
+            </div>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/MauritiusSoftwareCraftsmanshipCommunity/"
+                class="social__icon"
+              >
+                <img src="/icon/facebook.svg" alt />
+              </a>
+              <a href="https://twitter.com/mscraftsman" class="social__icon">
+                <img src="/icon/twitter.svg" alt />
+              </a>
+              <a href="https://www.linkedin.com/groups/5033639" class="social__icon">
+                <img src="/icon/linkedin.svg" alt />
+              </a>
+              <a href="https://github.com/mscraftsman" class="social__icon">
+                <img src="/icon/github.svg" alt />
+              </a>
+            </div>
+          </div>
+          <div class="bottom__wrapper">
+            <ul>
+              <li>
+                <router-link to="/">Code of Conduct</router-link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="right__wrapper"></div>
       </div>
     </div>
   </footer>
@@ -16,17 +47,87 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.global__footer {
+.slanted {
+  height: 150px;
+  width: 100%;
+}
+
+.footer__container {
   background: black;
-  padding: 30px 0;
+  padding: 10px 0 50px 0;
+}
+
+.global__footer {
+  line-height: 0;
 
   .footer__content {
-    display: grid;
-    grid-template-columns: 0.2fr 1fr;
+    // display: grid;
+    // grid-template-columns: 0.2fr 1fr;
 
-    .left__wrapper {
-      img {
-        width: 100px;
+    // .left__wrapper {
+    //   img {
+    //     width: 100px;
+    //   }
+    // }
+
+    .top__wrapper {
+      text-align: center;
+
+      .image {
+        img {
+          width: 60px;
+          margin-bottom: 40px;
+        }
+
+        .mscc {
+          color: white;
+          font-size: 22px;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: var(--bronze);
+          font-family: var(--font-bangers);
+          letter-spacing: 1px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    .social {
+      margin-top: 30px;
+      margin-bottom: 40px;
+
+      .social__icon {
+        margin-right: 30px;
+
+        img {
+          width: 25px;
+        }
+      }
+    }
+
+    .bottom__wrapper {
+      ul {
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        li {
+          display: inline-block;
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            color: #aabbc3;
+          }
+        }
       }
     }
   }
@@ -45,6 +146,25 @@ export default {};
   a {
     margin: 0;
     color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .slanted {
+    height: 100px;
+    width: 100%;
+  }
+
+  .global__footer {
+    line-height: 0;
+
+    .footer__content {
+      .top__wrapper {
+        .mscc {
+          line-height: 30px;
+        }
+      }
+    }
   }
 }
 </style>

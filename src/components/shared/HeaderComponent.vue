@@ -105,4 +105,32 @@ export default {};
     }
   }
 }
+
+@media (max-width: 768px) {
+  .global__header {
+    .logo {
+      .text {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .global__header {
+    .logo {
+      .text {
+        font-size: 20px;
+      }
+    }
+
+    .inner__grid {
+      grid-template-columns: 1fr;
+
+      .right__block {
+        display: none;
+      }
+    }
+  }
+}
 </style>

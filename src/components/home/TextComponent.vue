@@ -45,4 +45,19 @@ export default {};
     }
   }
 }
+
+@media (max-width: 768px) {
+  .text__container {
+    background-size: 200px;
+  }
+
+  .title__section {
+    .sub-text {
+      font-size: 16px;
+    }
+    .title {
+      font-size: 40px;
+    }
+  }
+}
 </style>

@@ -81,4 +81,15 @@ html {
     font-family: var(--font-bangers);
   }
 }
+
+@media (max-width: 768px) {
+  .title__section {
+    .sub-text {
+      font-size: 16px;
+    }
+    .title {
+      font-size: 40px;
+    }
+  }
+}
 </style>
