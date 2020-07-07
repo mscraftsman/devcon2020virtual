@@ -14,7 +14,7 @@
                   <img src="/sponsors/liquid-telecom.png" alt />
                 </a>
               </div>
-              <div class="item">
+              <div class="item white-bg">
                 <a href="https://www.mcb.mu/" target="_blank">
                   <img src="/sponsors/mcb.png" alt />
                 </a>
@@ -66,7 +66,7 @@
                   <img src="/sponsors/synthesis.png" alt />
                 </a>
               </div>
-              <div class="item">
+              <div class="item white-bg">
                 <a href="https://www.swanforlife.com" target="_blank">
                   <img src="/sponsors/swan.png" alt />
                 </a>
@@ -205,7 +205,7 @@ export default {};
 
 <style lang="scss" scoped>
 .sponsors__container {
-  padding: 100px 0;
+  padding: 0;
   background: #fcfcfc;
   background: url("/radial.svg");
   background-position: center top;
@@ -275,6 +275,16 @@ export default {};
         img {
           width: 70%;
         }
+
+        a {
+          display: block;
+        }
+
+        &.white-bg {
+          a {
+            background: white;
+          }
+        }
       }
     }
 
@@ -292,7 +302,7 @@ export default {};
         .item {
           width: 25%;
           img {
-            width: 95%;
+            width: 100%;
           }
         }
       }
@@ -332,7 +342,18 @@ export default {};
         .item {
           width: 20%;
           img {
-            width: 70%;
+            width: 75%;
+          }
+        }
+      }
+    }
+
+    &.internet {
+      .sponsors {
+        .item {
+          width: 20%;
+          img {
+            width: 95%;
           }
         }
       }

@@ -15,8 +15,8 @@ import FooterComponent from "@/components/shared/FooterComponent.vue";
 export default {
   components: {
     HeaderComponent,
-    FooterComponent
-  }
+    FooterComponent,
+  },
 };
 </script>
 
@@ -60,7 +60,7 @@ html {
 
 .container__fw {
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1200px;
   width: 100%;
   padding: 0 10px;
 }

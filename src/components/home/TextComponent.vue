@@ -21,22 +21,22 @@ export default {};
 <style lang="scss" scoped>
 .text__container {
   padding: 60px 0;
-  text-align: left;
+  text-align: center;
   background: url("/cloud-right.svg");
   background-position: bottom right;
   background-repeat: no-repeat;
 
-  .sub-text {
-    text-align: left;
-  }
+  // .sub-text {
+  //   text-align: center;
+  // }
 
-  .title {
-    text-align: left;
-    font-size: 45px;
-  }
+  // .title {
+  //   text-align: center;
+  //   font-size: 45px;
+  // }
 
   .content {
-    text-align: left;
+    text-align: center;
 
     p {
       font-weight: 300;

@@ -20,11 +20,24 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@keyframes swirl-in-fwd {
+  0% {
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
 .intro__container {
-  padding: 10px 0;
+  margin-top: 70px;
+  padding: 50px 0;
   // background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   // background: var(--bronze);
   background: url("/bg.png");
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -48,6 +61,7 @@ export default {};
 
     img {
       max-height: 500px;
+      animation: swirl-in-fwd 0.6s ease-out both;
     }
   }
 

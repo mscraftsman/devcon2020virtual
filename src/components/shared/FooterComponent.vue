@@ -1,8 +1,11 @@
 <template>
   <footer class="global__footer">
-    <svg data-v-71f627fa viewBox="0 0 100 100" preserveAspectRatio="none" class="slanted">
-      <polygon data-v-71f627fa points="0,0 100,100 100,100, 0,100" pointer-events="none" />
-    </svg>
+    <div class="slanted__svg">
+      <svg data-v-71f627fa viewBox="0 0 100 100" preserveAspectRatio="none" class="slanted">
+        <polygon data-v-71f627fa points="0,0 100,100 100,100, 0,100" pointer-events="none" />
+      </svg>
+      <img class="building" src="/buildings.png" alt />
+    </div>
     <div class="footer__container">
       <div class="container__fw">
         <div class="footer__content">
@@ -32,7 +35,7 @@
           <div class="bottom__wrapper">
             <ul>
               <li>
-                <router-link to="/">Code of Conduct</router-link>
+                <router-link :to="{ name: 'Code' }">Code of Conduct</router-link>
               </li>
             </ul>
           </div>
@@ -47,6 +50,17 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.slanted__svg {
+  position: relative;
+
+  .building {
+    position: absolute;
+    width: 400px;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 .slanted {
   height: 150px;
   width: 100%;
@@ -150,6 +164,11 @@ export default {};
 }
 
 @media (max-width: 768px) {
+  .slanted__svg {
+    background-size: 300px;
+    background-position: 30px right;
+  }
+
   .slanted {
     height: 100px;
     width: 100%;
@@ -165,6 +184,18 @@ export default {};
         }
       }
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .slanted__svg {
+    background-size: 200px;
+    background-position: 40px right;
+  }
+
+  .slanted {
+    height: 60px;
+    width: 100%;
   }
 }
 </style>

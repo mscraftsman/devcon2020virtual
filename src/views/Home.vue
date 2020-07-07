@@ -1,16 +1,15 @@
 <template>
   <div class="home">
     <IntroComponent />
-    <!-- <ScheduleComponent /> -->
     <TextComponent />
+    <ScheduleComponent />
     <SponsorsComponent />
-    <SpeakersComponent />
   </div>
 </template>
 
 <script>
 import IntroComponent from "@/components/home/IntroComponent";
-// import ScheduleComponent from "@/components/home/ScheduleComponent";
+import ScheduleComponent from "@/components/home/ScheduleComponent";
 import SponsorsComponent from "@/components/home/SponsorsComponent";
 // import SpeakersComponent from "@/components/home/SpeakersComponent";
 import TextComponent from "@/components/home/TextComponent";
@@ -20,8 +19,8 @@ export default {
   components: {
     IntroComponent,
     SponsorsComponent,
-    TextComponent
-    // ScheduleComponent,
+    TextComponent,
+    ScheduleComponent
     // SpeakersComponent
   }
 };

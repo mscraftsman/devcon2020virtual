@@ -3,7 +3,7 @@
     <div class="container__fw">
       <div class="inner__grid">
         <div class="left__block">
-          <a href="https://lexpress.mu" class="logo">
+          <router-link :to="{ name: 'Home' }" class="logo">
             <div class="mscc">
               <img src="/MSCC-logo-inverted.svg" alt />
             </div>
@@ -11,10 +11,12 @@
               Developers Conference
               <span class="year">2020</span>
             </div>
-          </a>
+          </router-link>
         </div>
         <div class="right__block">
-          <router-link to="/" class="header__button light">Code of conduct</router-link>
+          <router-link :to="{ name: 'Code' }" class="header__button light"
+            >Code of conduct</router-link
+          >
           <!-- <router-link to="/" class="header__button">Calendar +</router-link> -->
         </div>
       </div>
@@ -35,6 +37,7 @@ export default {};
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
 
   .inner__grid {
     display: grid;

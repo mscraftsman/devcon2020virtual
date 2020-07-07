@@ -5,6 +5,7 @@
         <div class="sub-text">What's on the menu</div>
         <div class="title">Schedule</div>
       </div>
+      <img class="schedule-wf" src="/schedule.png" alt />
     </div>
   </div>
 </template>
@@ -15,6 +16,15 @@ export default {};
 
 <style lang="scss" scoped>
 .sponsors__container {
-  padding: 100px 0;
+  padding: 0px 0px 100px 0;
+  width: 100%;
+
+  .title__section {
+    margin-bottom: 40px;
+  }
+
+  .schedule-wf {
+    width: 100%;
+  }
 }
 </style>
