@@ -137,6 +137,11 @@
                   <img src="/sponsors/frci.png" alt />
                 </a>
               </div>
+              <div class="item">
+                <a href="https://www.graphicstemple.io/" target="_blank">
+                  <img src="/sponsors/gt.png" alt />
+                </a>
+              </div>
             </div>
           </div>
           <!-- 
