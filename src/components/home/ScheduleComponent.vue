@@ -5,7 +5,7 @@
         <div class="sub-text">What's on the menu</div>
         <div class="title">Schedule</div>
       </div>
-      <img class="schedule-wf" src="/schedule.png" alt />
+      <img class="schedule-wf" src="/schedule.jpg" alt />
     </div>
   </div>
 </template>
