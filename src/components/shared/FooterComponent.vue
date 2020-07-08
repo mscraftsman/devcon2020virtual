@@ -55,7 +55,7 @@ export default {};
 
   .building {
     position: absolute;
-    width: 400px;
+    width: 500px;
     right: 0;
     bottom: 0;
   }

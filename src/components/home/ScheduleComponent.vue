@@ -1,5 +1,5 @@
 <template>
-  <div class="sponsors__container">
+  <div class="schedule__container">
     <div class="container__fw">
       <div class="title__section">
         <div class="sub-text">What's on the menu</div>
@@ -15,9 +15,13 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.sponsors__container {
+.schedule__container {
   padding: 0px 0px 100px 0;
   width: 100%;
+  background: url("/superheros.png");
+  background-repeat: no-repeat;
+  background-size: 250px;
+  background-position: center left;
 
   .title__section {
     margin-bottom: 40px;
