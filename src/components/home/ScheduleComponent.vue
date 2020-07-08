@@ -29,6 +29,7 @@ export default {};
 
   .schedule-wf {
     width: 100%;
+    margin-top: 20px;
   }
 }
 </style>

@@ -78,7 +78,8 @@ export default {};
     z-index: 3;
 
     img {
-      width: 800px;
+      max-width: 800px;
+      width: 100%;
       transform: translateY(-40px);
       z-index: 100;
     }
@@ -131,6 +132,33 @@ export default {};
       font-weight: 700;
       text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
       box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .intro__container {
+    .image {
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .intro__container {
+    .image {
+      img {
+        width: 90%;
+        transform: translateY(-20px);
+      }
+    }
+
+    .borders {
+      svg {
+        height: 380px;
+      }
     }
   }
 }

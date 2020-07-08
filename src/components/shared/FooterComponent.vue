@@ -75,15 +75,6 @@ export default {};
   line-height: 0;
 
   .footer__content {
-    // display: grid;
-    // grid-template-columns: 0.2fr 1fr;
-
-    // .left__wrapper {
-    //   img {
-    //     width: 100px;
-    //   }
-    // }
-
     .top__wrapper {
       text-align: center;
 
@@ -165,6 +156,12 @@ export default {};
 
 @media (max-width: 768px) {
   .slanted__svg {
+    .building {
+      width: 300px;
+    }
+  }
+
+  .slanted__svg {
     background-size: 300px;
     background-position: 30px right;
   }
@@ -188,6 +185,12 @@ export default {};
 }
 
 @media (max-width: 500px) {
+  .slanted__svg {
+    .building {
+      width: 180px;
+    }
+  }
+
   .slanted__svg {
     background-size: 200px;
     background-position: 40px right;
