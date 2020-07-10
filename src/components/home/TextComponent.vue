@@ -23,6 +23,7 @@ export default {};
   padding: 60px 0;
   text-align: center;
   background: url("/cloud-right.svg");
+  background-size: 400px;
   background-position: bottom right;
   background-repeat: no-repeat;
 
@@ -58,6 +59,25 @@ export default {};
     .title {
       font-size: 40px;
     }
+  }
+}
+
+@media (max-width: 1660px) {
+  .text__container {
+    background-size: 290px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .text__container {
+    padding-bottom: 110px;
+  }
+}
+
+@media (max-width: 500px) {
+  .text__container {
+    background-size: 250px;
+    padding-bottom: 60px;
   }
 }
 </style>
