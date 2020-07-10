@@ -242,7 +242,7 @@ export default {};
     background: url("/images/home-sponsors/powerstone.png"),
       url("/images/home-sponsors/spacestone.png"),
       url("/images/home-sponsors/realitystone.png"),
-      url("/images/home-sponsors/soulstone.png"), 
+      url("/images/home-sponsors/soulstone.png"),
       url("/images/home-sponsors/timestone.png"),
       url("/images/home-sponsors/mindstone.png");
 
