@@ -1,11 +1,13 @@
 <template>
   <div class="schedule__container">
-    <div class="container__fw">
-      <div class="title__section">
-        <div class="sub-text">What's on the menu</div>
-        <div class="title">Schedule</div>
+    <div class="schedule__superheros">
+      <div class="container__fw">
+        <div class="title__section">
+          <div class="sub-text">What's on the menu</div>
+          <div class="title">Schedule</div>
+        </div>
+        <img class="schedule-wf" src="/schedule.jpg" alt />
       </div>
-      <img class="schedule-wf" src="/schedule.jpg" alt />
     </div>
   </div>
 </template>
@@ -16,12 +18,21 @@ export default {};
 
 <style lang="scss" scoped>
 .schedule__container {
-  padding: 0px 0px 100px 0;
-  width: 100%;
-  background: url("/superheros.png");
+  margin-bottom: 10vw;
+  padding: 0;
+  background: #fcfcfc;
+  background: url("/radial.svg");
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: 250px;
-  background-position: center left;
+  background-size: cover;
+
+  .schedule__superheros {
+    width: 100%;
+    background: url("/superheros.png");
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: bottom left;
+  }
 
   .title__section {
     margin-bottom: 40px;

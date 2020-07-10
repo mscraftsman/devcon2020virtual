@@ -3,7 +3,7 @@
     <div class="container__fw">
       <div class="title__section">
         <div class="sub-text">WE'RE BACKED BY SOME BIG PLAYERS!</div>
-        <div class="title">Made possible by the community</div>
+        <div class="title">Sponsors & Partners</div>
 
         <div class="list">
           <div class="group power">
@@ -210,12 +210,52 @@ export default {};
 
 <style lang="scss" scoped>
 .sponsors__container {
-  padding: 0;
-  background: #fcfcfc;
-  background: url("/radial.svg");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  --size: 50px;
+  --side-padding: 9%;
+  --right-padding: calc(100% - var(--side-padding));
+
+  --power-y: 7%;
+  --space-y: 18%;
+  --reality-y: 27%;
+  --soul-y: 44%;
+  --time-y: 55%;
+  --mind-y: 66%;
+
+  @media screen and (max-width: 767px) {
+    background: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    --size: 50px;
+    --side-padding: 1%;
+
+    --power-y: 11%;
+    --space-y: 18%;
+    --reality-y: 27%;
+    --soul-y: 44%;
+    --time-y: 55%;
+    --mind-y: 66%;
+
+    margin-bottom: 6vw;
+    padding: 0;
+    background: #fcfcfc;
+    background: url("/images/home-sponsors/powerstone.png"),
+      url("/images/home-sponsors/spacestone.png"),
+      url("/images/home-sponsors/realitystone.png"),
+      url("/images/home-sponsors/soulstone.png"), 
+      url("/images/home-sponsors/timestone.png"),
+      url("/images/home-sponsors/mindstone.png");
+
+    background-position: var(--side-padding) var(--power-y),
+      var(--right-padding) var(--space-y), var(--side-padding) var(--reality-y),
+      var(--right-padding) var(--soul-y), var(--side-padding) var(--time-y),
+      var(--right-padding) var(--mind-y);
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+      no-repeat;
+    background-size: var(--size), var(--size), var(--size), var(--size),
+      var(--size), var(--size);
+  }
 }
 
 .list {
