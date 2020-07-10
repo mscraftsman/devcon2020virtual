@@ -57,12 +57,13 @@ export default {};
     position: absolute;
     width: 500px;
     right: 0;
-    bottom: 0;
+    bottom: -30px;
+    z-index: -1;
   }
 }
 
 .slanted {
-  height: 150px;
+  height: 152px;
   width: 100%;
 }
 
