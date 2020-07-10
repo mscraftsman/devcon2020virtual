@@ -3,16 +3,11 @@
     <div class="bg"></div>
     <div class="borders">
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="slanted">
-        <polygon
-          points="0,0 100,0 100,80, 0,100"
-          pointer-events="none"
-          stroke="black"
-          fill="none"
-        />
+        <polygon points="0,0 100,0 100,80, 0,100" pointer-events="none" stroke="black" fill="none" />
       </svg>
     </div>
     <div class="image">
-      <img src="/intro.svg" />
+      <img src="/intro.png" />
     </div>
   </div>
 </template>
