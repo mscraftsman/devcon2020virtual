@@ -7,7 +7,12 @@
 
         <div class="list">
           <div class="group power">
-            <div class="title-package power">Power Stone</div>
+            <div class="title-package power">
+              <img src="/stones/power.png" alt="">
+              <div class="text">
+                Power stone (Diamond)
+              </div>
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.liquidtelecom.com/" target="_blank">
@@ -23,7 +28,12 @@
           </div>
 
           <div class="group space">
-            <div class="title-package space">Space Stone</div>
+            <div class="title-package space">
+              <img src="/stones/space.png" alt="">
+              <div class="text">
+                Space Stone (Titanium)
+              </div>
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.providus.mu" target="_blank">
@@ -34,7 +44,12 @@
           </div>
 
           <div class="group reality">
-            <div class="title-package reality">Reality Stone</div>
+            <div class="title-package reality">
+              <img src="/stones/reality.png" alt="">
+              <div class="text">
+                Reality Stone (Platinium)
+              </div>
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.sdworx.com/" target="_blank">
@@ -75,7 +90,13 @@
           </div>
 
           <div class="group soul">
-            <div class="title-package soul">Soul Stone</div>
+            <div class="title-package soul">
+              <img src="/stones/soul.png" alt="">
+              <div class="text">
+                Soul Stone (Gold)
+              </div>
+            </div>
+
             <div class="sponsors">
               <div class="item">
                 <a href="https://corshamscience.com/" target="_blank">
@@ -96,7 +117,12 @@
           </div>
 
           <div class="group time">
-            <div class="title-package time">Time Stone</div>
+            <div class="title-package time">
+              <img src="/stones/time.png" alt="">
+              <div class="text">
+                Time Stone (Silver)
+              </div>
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a
@@ -110,7 +136,12 @@
           </div>
 
           <div class="group mind">
-            <div class="title-package mind">Mind Stone</div>
+            <div class="title-package mind">
+              <img src="/stones/mind.png" alt="">
+              <div class="text">
+                Mind Stone (Bronze)
+              </div>
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.aerow.group" target="_blank">
@@ -265,6 +296,14 @@ export default {};
       font-family: var(--font-bangers);
       font-size: 40px;
       margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 60px;
+        margin-right: 20px;
+      }
 
       &.power,
       &.space,
