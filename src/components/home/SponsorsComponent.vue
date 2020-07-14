@@ -301,7 +301,7 @@ export default {};
       justify-content: center;
 
       img {
-        height: 60px;
+        height: 50px;
         margin-right: 20px;
       }
 
@@ -311,7 +311,7 @@ export default {};
       &.soul,
       &.time,
       &.mind {
-        text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
       }
 
       &.power {
