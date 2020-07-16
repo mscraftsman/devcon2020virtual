@@ -39,6 +39,7 @@
             <div class="room-track">
               <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
               <css-grid
+                class="room-name"
                 :columns="currentGrid.columns"
                 :rows="currentGrid.rows"
                 :areas="currentGrid.areas"
@@ -46,7 +47,7 @@
                 <css-grid-item
                   :area="room"
                   class="room-item uppercase text-sm"
-                  :data-room="roomRepo[room]"
+                  :data-room="index"
                   v-for="(room, index) in displayedRooms"
                   :key="index"
                 >
@@ -111,11 +112,11 @@
                           <div class="image">
                             <img
                               :src="speakersById[speaker.id].profilePicture"
-                              alt=""
+                              :alt="speaker.name"
                             />
                           </div>
                           <div class="info">
-                            {{ speaker.name }}
+                            {{ checkNameLength(speaker.name) }}
                           </div>
                         </div>
                       </template>
@@ -132,7 +133,7 @@
                           <div class="image">
                             <img
                               :src="speakersById[speaker.id].profilePicture"
-                              alt=""
+                              :alt="speaker.name"
                             />
                           </div>
                         </div>
@@ -199,10 +200,10 @@ export default {
       timeScale: 5,
       rooms: ["r12900", "r12901", "r12902", "r12903"],
       roomRepo: {
-        r12900: "Track 1",
-        r12901: "Track 2",
-        r12902: "Track 3",
-        r12903: "Track 3",
+        r12900: "Batcave",
+        r12901: "Avengers Tower",
+        r12902: "New Asgard",
+        r12903: "Kryptone",
       },
       availableRooms: [
         { id: "r12900", index: 0 },
@@ -220,6 +221,13 @@ export default {
         return title.substring(0, 60) + "...";
       } else {
         return title;
+      }
+    },
+    checkNameLength(name) {
+      if (name.length > 20) {
+        return name.substring(0, 20) + "...";
+      } else {
+        return name;
       }
     },
     timeStartCoordinate(time) {
@@ -352,7 +360,7 @@ export default {
     CssGridItem,
     ViewportListener,
   },
-  async created() {
+  created() {
     const stats = this.$store.dispatch("FETCH_STATS");
     const sponsors = this.$store.dispatch("FETCH_SPONSORS");
     const speakers = this.$store.dispatch("FETCH_SPEAKERS");
@@ -361,14 +369,14 @@ export default {
     const promises = [stats, sponsors, speakers, sessions, credits];
     if (!Promise.allSettled) {
       try {
-        await Promise.all(promises);
+        Promise.all(promises);
       } catch (error) {
         // * Something did not load. Let's try again.
-        await Promise.all(promises);
+        Promise.all(promises);
       }
       return;
     }
-    await Promise.allSettled(promises);
+    Promise.allSettled(promises);
   },
 };
 </script>
@@ -498,7 +506,27 @@ export default {
   .room-track {
     font-family: var(--font-bangers);
     font-size: 25px;
-    height: 40px;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
+    .room-item {
+      font-size: 30px;
+
+      &[data-room="0"] {
+        color: var(--red);
+      }
+      &[data-room="1"] {
+        color: var(--blue);
+      }
+      &[data-room="2"] {
+        color: var(--yellow);
+      }
+      &[data-room="3"] {
+        color: var(--green);
+      }
+    }
   }
 
   .programme-track {
@@ -591,11 +619,6 @@ export default {
     font-size: 20px;
   }
 
-  &:hover {
-    background: #cccccc;
-    color: white;
-  }
-
   .session__block {
     position: relative;
     height: 100%;
@@ -608,7 +631,7 @@ export default {
     }
     .speaker__info {
       position: absolute;
-      bottom: 15px;
+      bottom: 0px;
       right: 0;
       background: black;
       height: 35px;
@@ -641,8 +664,8 @@ export default {
             left: -20px;
             width: 45px;
             border-radius: 45px;
-            top: 3px;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+            top: -2px;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
             // border: 1px solid black;
           }
         }
@@ -665,12 +688,12 @@ export default {
   border: 3px solid black;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 
-  &:nth-child(2n + 1) {
-    border-radius: 255px 45px 25px 35px/15px 255px 15px 255px;
-  }
-  &:nth-child(3n + 1) {
-    border-radius: 45px 55px 5px 5px/15px 15px 15px 155px;
-  }
+  // &:nth-child(2n + 1) {
+  //   border-radius: 255px 45px 25px 35px/15px 255px 15px 255px;
+  // }
+  // &:nth-child(3n + 1) {
+  //   border-radius: 45px 55px 5px 5px/15px 15px 15px 155px;
+  // }
 
   &[room-id="12900"] {
     .session__block {
@@ -683,6 +706,17 @@ export default {
       }
       .speaker__info {
         background: var(--red);
+      }
+
+      &:hover {
+        background: var(--red);
+
+        .title {
+          color: white;
+        }
+        .speaker__info {
+          background: black;
+        }
       }
     }
   }
@@ -697,6 +731,17 @@ export default {
       }
       .speaker__info {
         background: var(--blue);
+      }
+
+      &:hover {
+        background: var(--blue);
+
+        .title {
+          color: white;
+        }
+        .speaker__info {
+          background: black;
+        }
       }
     }
   }
@@ -713,6 +758,18 @@ export default {
         background: var(--yellow);
         color: black;
       }
+
+      &:hover {
+        background: var(--yellow);
+
+        .title {
+          color: white;
+        }
+        .speaker__info {
+          background: black;
+          color: white;
+        }
+      }
     }
   }
   &[room-id="12903"] {
@@ -726,6 +783,40 @@ export default {
       }
       .speaker__info {
         background: var(--green);
+      }
+
+      &:hover {
+        background: var(--green);
+
+        .title {
+          color: white;
+        }
+        .speaker__info {
+          background: black;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .schedule-container {
+    .room-track {
+      display: grid;
+      grid-template-columns: 50px 1fr 50px;
+
+      button {
+        background: black;
+        color: white;
+        border: 0;
+      }
+
+      .room-name {
+        display: block !important;
+
+        .room-item {
+          color: black;
+        }
       }
     }
   }
