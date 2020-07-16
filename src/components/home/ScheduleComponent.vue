@@ -360,7 +360,7 @@ export default {
     CssGridItem,
     ViewportListener,
   },
-  created() {
+  async created() {
     const stats = this.$store.dispatch("FETCH_STATS");
     const sponsors = this.$store.dispatch("FETCH_SPONSORS");
     const speakers = this.$store.dispatch("FETCH_SPEAKERS");
@@ -369,10 +369,10 @@ export default {
     const promises = [stats, sponsors, speakers, sessions, credits];
     if (!Promise.allSettled) {
       try {
-        Promise.all(promises);
+        await Promise.all(promises);
       } catch (error) {
         // * Something did not load. Let's try again.
-        Promise.all(promises);
+        await Promise.all(promises);
       }
       return;
     }
