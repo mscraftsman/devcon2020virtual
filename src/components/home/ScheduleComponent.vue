@@ -87,9 +87,9 @@
                   :room-id="getRoomId(programme)"
                   :key="index"
                 >
-                  <router-link
-                    :to="{ name: 'session', params: { id: programme.id } }"
+                  <div
                     class="session__block"
+                    @click="openModal(programme.id, getRoomId(programme))"
                   >
                     <div class="title">
                       {{ checkLength(programme.title) }}
@@ -139,21 +139,137 @@
                         </div>
                       </template>
                     </div>
-                  </router-link>
+                  </div>
+                  <!-- <router-link
+                    :to="{ name: 'session', params: { id: programme.id } }"
+                    class="session__block"
+                  >
+                  </router-link> -->
                 </css-grid-item>
               </css-grid>
+            </div>
+
+            <div class="room-track">
+              <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
+              <css-grid
+                class="room-name"
+                :columns="currentGrid.columns"
+                :rows="currentGrid.rows"
+                :areas="currentGrid.areas"
+              >
+                <css-grid-item
+                  :area="room"
+                  class="room-item uppercase text-sm"
+                  :data-room="index"
+                  v-for="(room, index) in displayedRooms"
+                  :key="index"
+                >
+                  {{ roomRepo[room] }}
+                </css-grid-item>
+              </css-grid>
+              <button title="next" v-if="isMobile" @click="next">&gt;</button>
+            </div>
+
+            <div class="date-track">
+              <div
+                class="day-item"
+                :class="{ active: currentDay == 0 }"
+                @click="currentDay = 0"
+              >
+                Day 1
+              </div>
+              <div
+                class="day-item"
+                :class="{ active: currentDay == 1 }"
+                @click="currentDay = 1"
+              >
+                Day 2
+              </div>
+              <div
+                class="day-item"
+                :class="{ active: currentDay == 2 }"
+                @click="currentDay = 2"
+              >
+                Day 3
+              </div>
             </div>
           </div>
           <ViewportListener v-model="viewport" />
         </div>
       </div>
     </div>
+    <modal
+      name="session_modal"
+      :class="['session_modal', 'r' + modal_info.theme]"
+      :width="600"
+      height="auto"
+      :adaptive="true"
+      :clickToClose="false"
+      :scrollable="true"
+    >
+      <div class="close__button">
+        <button @click="closeModal()">
+          <img src="/close.svg" alt="close" />
+        </button>
+      </div>
+      <div class="content">
+        <h3>{{ modal_info.title }}</h3>
+        <div
+          :class="[
+            'author__information',
+            {
+              multiple: modal_info.speakers && modal_info.speakers.length > 1,
+            },
+          ]"
+        >
+          <div
+            class="speaker"
+            v-for="(speaker, index) in modal_info.speakers"
+            :key="index"
+          >
+            <div class="image">
+              <img
+                :src="speakersById[speaker.id].profilePicture"
+                :alt="speaker.name"
+              />
+            </div>
+            <div class="info">
+              {{ speaker.name }}
+            </div>
+          </div>
+        </div>
+        <div class="location__time">
+          <div class="location">
+            <span class="icon">
+              <img src="/location.svg" alt="" />
+            </span>
+            <span class="data">
+              {{ modal_info.room }}
+            </span>
+          </div>
+          <div class="time">
+            <span class="icon">
+              <img src="/time.svg" alt="" />
+            </span>
+            <span class="data">
+              {{ getDay(modal_info.startsAt) }}
+              {{ time(modal_info.startsAt) }} -
+              {{ time(modal_info.endsAt) }}
+            </span>
+          </div>
+        </div>
+        <div class="description">
+          <p v-html="modal_info.description"></p>
+        </div>
+      </div>
+    </modal>
   </div>
 </template>
 
 <script>
 import { CssGrid, CssGridItem, ViewportListener } from "vue-css-grid";
 import { mapGetters } from "vuex";
+import { time as timeHelper, getDay as getDayHelper } from "@/helpers";
 
 export default {
   data() {
@@ -213,9 +329,22 @@ export default {
       ],
       currentDay: 0,
       currentRoom: { id: "r12900", index: 0 },
+      modal_info: {},
     };
   },
   methods: {
+    time: timeHelper,
+    getDay: getDayHelper,
+    openModal(id, room) {
+      let info = this.sessionsById[id];
+      this.modal_info = info;
+      this.modal_info.theme = room;
+
+      this.$modal.show("session_modal");
+    },
+    closeModal() {
+      this.$modal.hide("session_modal");
+    },
     checkLength(title) {
       if (title.length > 60) {
         return title.substring(0, 60) + "...";
@@ -305,6 +434,7 @@ export default {
       sessions: "getSessions",
       speakers: "getSpeakers",
       speakersById: "getSpeakersById",
+      sessionsById: "getSessionsById",
     }),
     currentDaySessions() {
       let result = null;
@@ -800,6 +930,12 @@ export default {
 }
 
 @media (max-width: 1024px) {
+  .schedule__container {
+    .schedule__superheros {
+      background: initial;
+    }
+  }
+
   .schedule-container {
     .room-track {
       display: grid;
@@ -815,7 +951,198 @@ export default {
         display: block !important;
 
         .room-item {
-          color: black;
+          color: rgb(177, 138, 138);
+        }
+      }
+    }
+  }
+}
+</style>
+
+<style lang="scss">
+.session_modal {
+  --red: #f53f32;
+  --blue: #14a0c7;
+  --yellow: #fed02b;
+  --green: #45b656;
+
+  &.r12900 {
+    .vm--modal {
+      .content {
+        h3 {
+          color: var(--red);
+        }
+        .author__information {
+          background: var(--red);
+        }
+      }
+    }
+  }
+  &.r12901 {
+    .vm--modal {
+      .content {
+        h3 {
+          color: var(--blue);
+        }
+        .author__information {
+          background: var(--blue);
+        }
+      }
+    }
+  }
+  &.r12902 {
+    .vm--modal {
+      .content {
+        h3 {
+          color: var(--yellow);
+        }
+        .author__information {
+          background: var(--yellow);
+        }
+      }
+    }
+  }
+  &.r12903 {
+    .vm--modal {
+      .content {
+        h3 {
+          color: var(--green);
+        }
+        .author__information {
+          background: var(--green);
+        }
+      }
+    }
+  }
+
+  .close__button {
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    button {
+      height: 40px;
+      margin-right: 20px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+
+      img {
+        height: 30px;
+      }
+    }
+  }
+
+  .vm--modal {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 2px solid #000;
+    border-color: #000;
+    max-height: 90vh;
+    overflow: scroll;
+
+    .content {
+      h3 {
+        text-transform: uppercase;
+        font-size: 35px;
+        font-family: var(--font-bangers);
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 10px 20px;
+        margin: 10px 0;
+        margin-top: 0;
+      }
+
+      .author__information {
+        background: black;
+        padding: 10px;
+
+        &.multiple {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px;
+
+          .speaker {
+            justify-content: flex-start;
+          }
+        }
+
+        .speaker {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .image {
+            margin-right: 10px;
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50px;
+            }
+          }
+
+          .info {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+        }
+      }
+      .location__time {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: black;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 15px;
+
+        .location,
+        .time {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon {
+            margin-right: 15px;
+            img {
+              height: 30px;
+            }
+          }
+          .data {
+            color: white;
+          }
+        }
+      }
+
+      .description {
+        padding: 10px 20px;
+        font-weight: 300;
+        line-height: 26px;
+        // max-height: 600px;
+        // overflow: scroll;
+
+        p {
+          line-height: 25px;
+          font-weight: 300;
+          white-space: pre-wrap;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .session_modal {
+    .vm--modal {
+      .content {
+        h3 {
+          font-size: 28px;
+        }
+
+        .description {
+          // max-height: 300px;
+          // overflow: scroll;
         }
       }
     }
