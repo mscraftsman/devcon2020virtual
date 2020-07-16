@@ -47,7 +47,7 @@
             <div class="title-package reality">
               <img src="/stones/reality.png" alt="">
               <div class="text">
-                Reality Stone (Platinium)
+                Reality Stone (Platinum)
               </div>
             </div>
             <div class="sponsors">
