@@ -201,7 +201,7 @@
     <modal
       name="session_modal"
       :class="['session_modal', 'r' + modal_info.theme]"
-      :width="600"
+      :width="1100"
       height="auto"
       :adaptive="true"
       :clickToClose="false"
@@ -213,53 +213,70 @@
         </button>
       </div>
       <div class="content">
-        <h3>{{ modal_info.title }}</h3>
-        <div
-          :class="[
-            'author__information',
-            {
-              multiple: modal_info.speakers && modal_info.speakers.length > 1,
-            },
-          ]"
-        >
+        <div class="left__wrapper">
+          <h3>{{ modal_info.title }}</h3>
+          <div class="location__time">
+            <div class="location">
+              <span class="icon">
+                <img src="/location.svg" alt="" />
+              </span>
+              <span class="data">
+                {{ modal_info.room }}
+              </span>
+            </div>
+            <div class="time">
+              <span class="icon">
+                <img src="/time.svg" alt="" />
+              </span>
+              <span class="data">
+                {{ getDay(modal_info.startsAt) }}
+                {{ time(modal_info.startsAt) }} -
+                {{ time(modal_info.endsAt) }}
+              </span>
+            </div>
+          </div>
+          <div class="description">
+            <p v-html="modal_info.description"></p>
+          </div>
+        </div>
+        <div class="right__wrapper">
           <div
-            class="speaker"
-            v-for="(speaker, index) in modal_info.speakers"
-            :key="index"
+            :class="[
+              'author__information',
+              {
+                multiple: modal_info.speakers && modal_info.speakers.length > 1,
+              },
+            ]"
           >
-            <div class="image">
-              <img
-                :src="speakersById[speaker.id].profilePicture"
-                :alt="speaker.name"
-              />
+            <div
+              class="speaker"
+              v-for="(speaker, index) in modal_info.speakers"
+              :key="index"
+            >
+              <div class="profile__name">
+                <div class="image">
+                  <img
+                    :src="speakersById[speaker.id].profilePicture"
+                    :alt="speaker.name"
+                  />
+                </div>
+                <div class="info">
+                  <div class="name">
+                    {{ speaker.name }}
+                  </div>
+                  <div
+                    class="profession"
+                    v-if="speakersById[speaker.id].tagLine"
+                  >
+                    {{ speakersById[speaker.id].tagLine }}
+                  </div>
+                </div>
+              </div>
+              <div class="bio">
+                <p v-html="speakersById[speaker.id].bio"></p>
+              </div>
             </div>
-            <div class="info">
-              {{ speaker.name }}
-            </div>
           </div>
-        </div>
-        <div class="location__time">
-          <div class="location">
-            <span class="icon">
-              <img src="/location.svg" alt="" />
-            </span>
-            <span class="data">
-              {{ modal_info.room }}
-            </span>
-          </div>
-          <div class="time">
-            <span class="icon">
-              <img src="/time.svg" alt="" />
-            </span>
-            <span class="data">
-              {{ getDay(modal_info.startsAt) }}
-              {{ time(modal_info.startsAt) }} -
-              {{ time(modal_info.endsAt) }}
-            </span>
-          </div>
-        </div>
-        <div class="description">
-          <p v-html="modal_info.description"></p>
         </div>
       </div>
     </modal>
@@ -279,8 +296,6 @@ export default {
       programmes: null,
       schedule_height: 50,
       times: [
-        "08:00",
-        "08:30",
         "09:00",
         "09:30",
         "10:00",
@@ -299,18 +314,8 @@ export default {
         "16:30",
         "17:00",
         "17:30",
-        "18:00",
-        "18:30",
-        "19:00",
-        "19:30",
-        "20:00",
-        "20:30",
-        "21:00",
-        "21:30",
-        "22:00",
-        "22:30",
       ],
-      MINUTES_TO_EIGHT_OCLOCK: 8 * 60,
+      MINUTES_TO_EIGHT_OCLOCK: 8 * 67,
       timeStart: 0,
       timeSpan: 48,
       timeScale: 5,
@@ -364,6 +369,7 @@ export default {
       let minutes = parseInt(temp[1]);
       let hours = parseInt(temp[0]) * 60;
       let result = hours + minutes;
+      // let duration = "30";
       let duration = "30";
       const offsetResult = result - this.MINUTES_TO_EIGHT_OCLOCK;
 
@@ -661,7 +667,7 @@ export default {
 
   .programme-track {
     // background: green;
-    height: 3150px;
+    height: 1900px;
     /*overflow-y: scroll;*/
     .programme-track-container {
       /*scroll-snap-type: y proximity;*/
@@ -969,11 +975,16 @@ export default {
   &.r12900 {
     .vm--modal {
       .content {
-        h3 {
-          color: var(--red);
+        .left__wrapper {
+          h3 {
+            color: var(--red);
+          }
         }
-        .author__information {
+        .right__wrapper {
           background: var(--red);
+          .author__information {
+            background: var(--red);
+          }
         }
       }
     }
@@ -981,11 +992,16 @@ export default {
   &.r12901 {
     .vm--modal {
       .content {
-        h3 {
-          color: var(--blue);
+        .left__wrapper {
+          h3 {
+            color: var(--blue);
+          }
         }
-        .author__information {
+        .right__wrapper {
           background: var(--blue);
+          .author__information {
+            background: var(--blue);
+          }
         }
       }
     }
@@ -993,11 +1009,35 @@ export default {
   &.r12902 {
     .vm--modal {
       .content {
-        h3 {
-          color: var(--yellow);
+        .left__wrapper {
+          h3 {
+            color: var(--yellow);
+          }
         }
-        .author__information {
+        .right__wrapper {
           background: var(--yellow);
+          color: black;
+
+          .author__information {
+            background: var(--yellow);
+            color: black;
+
+            .speaker {
+              .profile__name {
+                display: flex;
+
+                .info {
+                  color: black;
+                }
+                .bio {
+                  color: black;
+                  p {
+                    color: black;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -1005,11 +1045,16 @@ export default {
   &.r12903 {
     .vm--modal {
       .content {
-        h3 {
-          color: var(--green);
+        .left__wrapper {
+          h3 {
+            color: var(--green);
+          }
         }
-        .author__information {
+        .right__wrapper {
           background: var(--green);
+          .author__information {
+            background: var(--green);
+          }
         }
       }
     }
@@ -1020,6 +1065,9 @@ export default {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
 
     button {
       height: 40px;
@@ -1042,90 +1090,127 @@ export default {
     overflow: scroll;
 
     .content {
-      h3 {
-        text-transform: uppercase;
-        font-size: 35px;
-        font-family: var(--font-bangers);
-        letter-spacing: 1px;
-        text-align: center;
-        padding: 10px 20px;
-        margin: 10px 0;
-        margin-top: 0;
-      }
+      display: grid;
+      grid-template-columns: 50% 50%;
 
-      .author__information {
-        background: black;
-        padding: 10px;
+      .left__wrapper {
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        border-right: 2px solid #000;
 
-        &.multiple {
+        h3 {
+          text-transform: uppercase;
+          font-size: 45px;
+          font-family: var(--font-bangers);
+          letter-spacing: 1px;
+          text-align: center;
+          padding: 10px 20px;
+          margin: 20px 0;
+          margin-top: 30px;
+        }
+
+        .location__time {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          grid-gap: 10px;
+          background: black;
+          padding: 10px;
+          margin-bottom: 20px;
+          font-size: 15px;
+
+          .location,
+          .time {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+              margin-right: 15px;
+              img {
+                height: 30px;
+              }
+            }
+            .data {
+              color: white;
+            }
+          }
+        }
+
+        .description {
+          padding: 10px 20px;
+          font-weight: 300;
+          line-height: 26px;
+          // max-height: 600px;
+          // overflow: scroll;
+
+          p {
+            line-height: 25px;
+            font-weight: 300;
+            white-space: pre-wrap;
+            text-align: left;
+          }
+        }
+      }
+
+      .right__wrapper {
+        height: 100%;
+        width: 100%;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        border-left: 2px solid #000;
+
+        .author__information {
+          background: black;
+          padding: 30px;
+
+          &.multiple {
+            // display: grid;
+            // grid-template-columns: 1fr 1fr;
+            // grid-gap: 10px;
+
+            .speaker {
+              justify-content: flex-start;
+            }
+          }
 
           .speaker {
-            justify-content: flex-start;
-          }
-        }
+            .profile__name {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              .image {
+                margin-right: 20px;
+                img {
+                  width: 110px;
+                  height: 110px;
+                  border-radius: 100px;
+                }
+              }
 
-        .speaker {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+              .info {
+                color: white;
 
-          .image {
-            margin-right: 10px;
-            img {
-              width: 50px;
-              height: 50px;
-              border-radius: 50px;
+                .name {
+                  font-size: 26px;
+                  font-weight: 700;
+                  margin-bottom: 5px;
+                  text-transform: uppercase;
+                }
+
+                .profession {
+                  font-size: 17px;
+                  font-weight: 300;
+                }
+              }
+            }
+
+            .bio {
+              p {
+                color: white;
+                line-height: 25px;
+                font-weight: 300;
+                white-space: pre-wrap;
+                text-align: left;
+              }
             }
           }
-
-          .info {
-            color: white;
-            text-transform: uppercase;
-            font-weight: 700;
-          }
-        }
-      }
-      .location__time {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background: black;
-        padding: 10px;
-        margin-bottom: 20px;
-        font-size: 15px;
-
-        .location,
-        .time {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            margin-right: 15px;
-            img {
-              height: 30px;
-            }
-          }
-          .data {
-            color: white;
-          }
-        }
-      }
-
-      .description {
-        padding: 10px 20px;
-        font-weight: 300;
-        line-height: 26px;
-        // max-height: 600px;
-        // overflow: scroll;
-
-        p {
-          line-height: 25px;
-          font-weight: 300;
-          white-space: pre-wrap;
-          text-align: left;
         }
       }
     }

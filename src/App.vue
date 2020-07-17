@@ -15,8 +15,8 @@ import FooterComponent from "@/components/shared/FooterComponent.vue";
 export default {
   components: {
     HeaderComponent,
-    FooterComponent
-  }
+    FooterComponent,
+  },
 };
 </script>
 
@@ -31,7 +31,7 @@ html {
   --platinium: #c74b47;
   --gold: #e97f29;
   --silver: #4bb484;
-  --bronze: #f6c376;
+  --bronze: #edb164;
   --mediapartner: #ccc;
   --happyhourpartner: #ccc;
   --speaker: #ccc;

@@ -8,7 +8,7 @@
               <img src="/MSCC-logo-inverted.svg" alt />
             </div>
             <div class="text">
-              Developers Conference
+              Virtual Developers Conference
               <span class="year">2020</span>
             </div>
           </router-link>
