@@ -63,6 +63,12 @@ export default {};
   }
 }
 
+@media (max-width: 1024px) {
+  .text__container {
+    padding: 60px 0 100px;
+  }
+}
+
 @media (max-width: 768px) {
   .text__container {
     background-size: 200px;
