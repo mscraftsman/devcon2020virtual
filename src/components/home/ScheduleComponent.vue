@@ -134,7 +134,11 @@
                             <img
                               :src="speakersById[speaker.id].profilePicture"
                               :alt="speaker.name"
+                              v-tooltip.top-center="speaker.name"
                             />
+                            <!-- <div class="pop">
+                              {{ speaker.name }}
+                            </div> -->
                           </div>
                         </div>
                       </template>
@@ -584,8 +588,7 @@ export default {
   --yellow: #fed02b;
   --green: #45b656;
 
-  margin-bottom: 10vw;
-  padding: 0;
+  padding: 60px 0 200px;
   background: #fcfcfc;
   background: url("/radial.svg");
   background-position: center top;
@@ -847,10 +850,31 @@ export default {
 
           .image {
             margin-right: 5px;
+            position: relative;
 
             img {
               left: -10px;
             }
+
+            // .pop {
+            //   position: absolute;
+            //   top: -70px;
+            //   color: black;
+            //   margin: 0 auto;
+            //   display: none;
+            //   background: white;
+            //   padding: 10px 20px;
+            //   left: -50%;
+            //   border-bottom: 2px solid black;
+            //   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            //   width: 100%;
+            // }
+
+            // &:hover {
+            //   .pop {
+            //     display: block;
+            //   }
+            // }
           }
         }
 
@@ -880,6 +904,7 @@ export default {
     }
   }
 }
+
 .box {
   border: 3px solid black;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -918,9 +943,9 @@ export default {
   }
   &[room-id="12901"] {
     .session__block {
-      // background: url("/blue_bg.png");
-      // background-position: center center;
-      // background-size: cover;
+      background: url("/blue_bg.png");
+      background-position: center center;
+      background-size: cover;
 
       .title {
         color: var(--blue);
@@ -997,7 +1022,8 @@ export default {
 
 @media (max-width: 1024px) {
   .schedule__container {
-    margin-bottom: 20vw;
+    padding: 60px 0 100px;
+
     .schedule__superheros {
       background: none;
     }
@@ -1303,6 +1329,105 @@ export default {
         }
       }
     }
+  }
+}
+
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+
+  .tooltip-inner {
+    background: white;
+    color: black;
+    font-family: var(--font-bangers);
+    border-radius: 16px;
+    padding: 5px 10px 4px;
+    letter-spacing: 1px;
+
+    border-bottom: 2px solid black;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+
+  .tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: black;
+    z-index: 1;
+  }
+
+  &[x-placement^="top"] {
+    margin-bottom: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 5px 0 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: 5px;
+
+    .tooltip-arrow {
+      border-width: 0 5px 5px 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="right"] {
+    margin-left: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 5px 5px 0;
+      border-left-color: transparent !important;
+      border-top-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-right: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      right: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[aria-hidden="true"] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s, visibility 0.15s;
+  }
+
+  &[aria-hidden="false"] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.15s;
   }
 }
 

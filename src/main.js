@@ -6,6 +6,9 @@ import store from "./store";
 import VModal from "vue-js-modal";
 Vue.use(VModal);
 
+import VTooltip from "v-tooltip";
+Vue.use(VTooltip);
+
 Vue.config.productionTip = false;
 
 new Vue({
