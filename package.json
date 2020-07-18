@@ -1,11 +1,27 @@
 {
-  "name": "devcon2020-v2",
+  "name": "devcon2020virtual",
+  "description": "Website of Developers Conference 2020 in Mauritius",
+  "demo": "https://conference.mscc.mu/",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Mauritius Software Craftsmanship Community",
+    "email": "hello@mscc.mu",
+    "url": "https://www.mscc.mu"
+  },
+  "contributors": [
+    "https://github.com/mscraftsman/devcon2020virtual/graphs/contributors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mscraftsman/devcon2020virtual.git"
+  },
+  "bugs": "https://github.com/mscraftsman/devcon2020virtual/issues",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build --dest docs",
+    "lint": "vue-cli-service lint",
+    "ghbuild": "NODE_ENV=ghpages vue-cli-service build --dest docs"
   },
   "dependencies": {
     "core-js": "^3.6.5",
