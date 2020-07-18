@@ -275,6 +275,66 @@
               <div class="bio">
                 <p v-html="speakersById[speaker.id].bio"></p>
               </div>
+              <div class="social">
+                <template
+                  v-for="(social, index) in speakersById[speaker.id].links"
+                >
+                  <a
+                    :href="social.url"
+                    target="_blank"
+                    class="social__icon"
+                    :key="'twitter-' + index"
+                    v-if="social.title == 'Twitter'"
+                  >
+                    <img src="/icon/twitter.svg" alt />
+                  </a>
+                  <a
+                    :href="social.url"
+                    target="_blank"
+                    class="social__icon"
+                    :key="'twitter-' + index"
+                    v-if="social.title == 'Facebook'"
+                  >
+                    <img src="/icon/facebook.svg" alt />
+                  </a>
+                  <a
+                    :href="social.url"
+                    target="_blank"
+                    class="social__icon"
+                    :key="'twitter-' + index"
+                    v-if="social.title == 'LinkedIn'"
+                  >
+                    <img src="/icon/linkedin.svg" alt />
+                  </a>
+                  <a
+                    :href="social.url"
+                    target="_blank"
+                    class="social__icon"
+                    :key="'twitter-' + index"
+                    v-if="social.title == 'Instagram'"
+                  >
+                    <img src="/icon/instagram.svg" alt />
+                  </a>
+                  <a
+                    :href="social.url"
+                    target="_blank"
+                    class="social__icon"
+                    :key="'twitter-' + index"
+                    v-if="social.title == 'GitHub'"
+                  >
+                    <img src="/icon/github.svg" alt />
+                  </a>
+                  <a
+                    :href="social.url"
+                    target="_blank"
+                    class="social__icon"
+                    :key="'twitter-' + index"
+                    v-if="social.title == 'Blog'"
+                  >
+                    <img src="/icon/website.svg" alt />
+                  </a>
+                </template>
+              </div>
             </div>
           </div>
         </div>
@@ -937,8 +997,9 @@ export default {
 
 @media (max-width: 1024px) {
   .schedule__container {
+    margin-bottom: 20vw;
     .schedule__superheros {
-      background: initial;
+      background: none;
     }
   }
 
@@ -971,94 +1032,6 @@ export default {
   --blue: #14a0c7;
   --yellow: #fed02b;
   --green: #45b656;
-
-  &.r12900 {
-    .vm--modal {
-      .content {
-        .left__wrapper {
-          h3 {
-            color: var(--red);
-          }
-        }
-        .right__wrapper {
-          background: var(--red);
-          .author__information {
-            background: var(--red);
-          }
-        }
-      }
-    }
-  }
-  &.r12901 {
-    .vm--modal {
-      .content {
-        .left__wrapper {
-          h3 {
-            color: var(--blue);
-          }
-        }
-        .right__wrapper {
-          background: var(--blue);
-          .author__information {
-            background: var(--blue);
-          }
-        }
-      }
-    }
-  }
-  &.r12902 {
-    .vm--modal {
-      .content {
-        .left__wrapper {
-          h3 {
-            color: var(--yellow);
-          }
-        }
-        .right__wrapper {
-          background: var(--yellow);
-          color: black;
-
-          .author__information {
-            background: var(--yellow);
-            color: black;
-
-            .speaker {
-              .profile__name {
-                display: flex;
-
-                .info {
-                  color: black;
-                }
-                .bio {
-                  color: black;
-                  p {
-                    color: black;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  &.r12903 {
-    .vm--modal {
-      .content {
-        .left__wrapper {
-          h3 {
-            color: var(--green);
-          }
-        }
-        .right__wrapper {
-          background: var(--green);
-          .author__information {
-            background: var(--green);
-          }
-        }
-      }
-    }
-  }
 
   .close__button {
     height: 50px;
@@ -1146,6 +1119,7 @@ export default {
             font-weight: 300;
             white-space: pre-wrap;
             text-align: left;
+            word-wrap: break-word;
           }
         }
       }
@@ -1202,12 +1176,190 @@ export default {
             }
 
             .bio {
+              margin-bottom: 10px;
               p {
                 color: white;
                 line-height: 25px;
                 font-weight: 300;
                 white-space: pre-wrap;
                 text-align: left;
+              }
+            }
+
+            .social {
+              display: flex;
+              justify-content: flex-end;
+
+              .social__icon {
+                height: 45px;
+                width: 45px;
+                display: block;
+                border: 2px solid white;
+                border-radius: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+
+                &:last-child {
+                  margin-right: 0;
+                }
+
+                img {
+                  height: 22px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.r12900 {
+    .vm--modal {
+      .content {
+        .left__wrapper {
+          h3 {
+            color: var(--red);
+          }
+        }
+        .right__wrapper {
+          background: var(--red);
+          .author__information {
+            background: var(--red);
+          }
+        }
+      }
+    }
+  }
+  &.r12901 {
+    .vm--modal {
+      .content {
+        .left__wrapper {
+          h3 {
+            color: var(--blue);
+          }
+        }
+        .right__wrapper {
+          background: var(--blue);
+          .author__information {
+            background: var(--blue);
+          }
+        }
+      }
+    }
+  }
+  &.r12902 {
+    .vm--modal {
+      .content {
+        .left__wrapper {
+          h3 {
+            color: var(--yellow);
+          }
+        }
+        .right__wrapper {
+          background: var(--yellow);
+          color: black;
+
+          .author__information {
+            background: var(--yellow);
+            color: black;
+
+            .speaker {
+              .profile__name {
+                display: flex;
+
+                .info {
+                  color: black;
+                }
+              }
+
+              .bio {
+                color: black;
+                p {
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.r12903 {
+    .vm--modal {
+      .content {
+        .left__wrapper {
+          h3 {
+            color: var(--green);
+          }
+        }
+        .right__wrapper {
+          background: var(--green);
+          .author__information {
+            background: var(--green);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .session_modal {
+    .vm--modal {
+      .content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .left__wrapper {
+          h3 {
+            font-size: 35px;
+          }
+          .location__time {
+            font-size: 14px;
+            display: block;
+
+            .location,
+            .time {
+              justify-content: flex-start;
+            }
+
+            .location {
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .right__wrapper {
+          .author__information {
+            &.multiple {
+              .speaker {
+              }
+            }
+
+            .speaker {
+              .profile__name {
+                .image {
+                  img {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 70px;
+                  }
+                }
+
+                .info {
+                  .name {
+                    font-size: 20px;
+                  }
+                  .profession {
+                    font-size: 16px;
+                  }
+                }
+              }
+
+              .social {
               }
             }
           }
@@ -1221,13 +1373,58 @@ export default {
   .session_modal {
     .vm--modal {
       .content {
-        h3 {
-          font-size: 28px;
+        display: block;
+
+        .left__wrapper {
+          h3 {
+            font-size: 35px;
+          }
+          .location__time {
+            font-size: 14px;
+            display: block;
+
+            .location,
+            .time {
+              justify-content: flex-start;
+            }
+
+            .location {
+              margin-bottom: 5px;
+            }
+          }
         }
 
-        .description {
-          // max-height: 300px;
-          // overflow: scroll;
+        .right__wrapper {
+          .author__information {
+            &.multiple {
+              .speaker {
+              }
+            }
+
+            .speaker {
+              .profile__name {
+                .image {
+                  img {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 70px;
+                  }
+                }
+
+                .info {
+                  .name {
+                    font-size: 20px;
+                  }
+                  .profession {
+                    font-size: 16px;
+                  }
+                }
+              }
+
+              .social {
+              }
+            }
+          }
         }
       }
     }

@@ -501,10 +501,20 @@ export default {};
           margin: 0 20px;
         }
       }
+      .sponsors {
+        .item {
+          width: 25%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
       &.power {
         .sponsors {
           .item {
-            width: 30%;
+            width: 40%;
 
             img {
               width: 100%;
@@ -515,7 +525,7 @@ export default {};
       &.space {
         .sponsors {
           .item {
-            width: 32%;
+            width: 40%;
 
             img {
               width: 100%;
@@ -526,7 +536,7 @@ export default {};
       &.reality {
         .sponsors {
           .item {
-            width: 28%;
+            width: 34%;
             img {
               width: 85%;
             }
@@ -536,9 +546,9 @@ export default {};
       &.soul {
         .sponsors {
           .item {
-            width: 25%;
+            width: 32%;
             img {
-              width: 93%;
+              width: 100%;
             }
           }
         }
@@ -546,9 +556,9 @@ export default {};
       &.time {
         .sponsors {
           .item {
-            width: 25%;
+            width: 35%;
             img {
-              width: 85%;
+              width: 100%;
             }
           }
         }
@@ -556,7 +566,7 @@ export default {};
       &.mind {
         .sponsors {
           .item {
-            width: 25%;
+            width: 30%;
             img {
               width: 75%;
             }
