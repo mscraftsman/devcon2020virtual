@@ -8,7 +8,7 @@
               <img src="/MSCC-logo-inverted.svg" alt />
             </div>
             <div class="text">
-              Developers Conference
+              Virtual Developers Conference
               <span class="year">2020</span>
             </div>
           </router-link>
@@ -59,12 +59,12 @@ export default {};
     }
 
     .mscc {
-      margin-right: 10px;
+      margin-right: 5px;
       width: 50px;
       height: 50px;
       display: flex;
       align-items: center;
-      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      // border-right: 1px solid rgba(255, 255, 255, 0.3);
 
       img {
         height: 40px;

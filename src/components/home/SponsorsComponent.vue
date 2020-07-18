@@ -7,7 +7,13 @@
 
         <div class="list">
           <div class="group power">
-            <div class="title-package power">Power Stone</div>
+            <div class="title-package power">
+              <img src="/stones/power.png" alt="" />
+              <div class="text">
+                Power stone (Diamond)
+              </div>
+              <img src="/stones/power.png" alt="" />
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.liquidtelecom.com/" target="_blank">
@@ -23,7 +29,13 @@
           </div>
 
           <div class="group space">
-            <div class="title-package space">Space Stone</div>
+            <div class="title-package space">
+              <img src="/stones/space.png" alt="" />
+              <div class="text">
+                Space Stone (Titanium)
+              </div>
+              <img src="/stones/space.png" alt="" />
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.providus.mu" target="_blank">
@@ -34,7 +46,13 @@
           </div>
 
           <div class="group reality">
-            <div class="title-package reality">Reality Stone</div>
+            <div class="title-package reality">
+              <img src="/stones/reality.png" alt="" />
+              <div class="text">
+                Reality Stone (Platinum)
+              </div>
+              <img src="/stones/reality.png" alt="" />
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.sdworx.com/" target="_blank">
@@ -75,7 +93,14 @@
           </div>
 
           <div class="group soul">
-            <div class="title-package soul">Soul Stone</div>
+            <div class="title-package soul">
+              <img src="/stones/soul.png" alt="" />
+              <div class="text">
+                Soul Stone (Gold)
+              </div>
+              <img src="/stones/soul.png" alt="" />
+            </div>
+
             <div class="sponsors">
               <div class="item">
                 <a href="https://corshamscience.com/" target="_blank">
@@ -96,7 +121,13 @@
           </div>
 
           <div class="group time">
-            <div class="title-package time">Time Stone</div>
+            <div class="title-package time">
+              <img src="/stones/time.png" alt="" />
+              <div class="text">
+                Time Stone (Silver)
+              </div>
+              <img src="/stones/time.png" alt="" />
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a
@@ -110,7 +141,13 @@
           </div>
 
           <div class="group mind">
-            <div class="title-package mind">Mind Stone</div>
+            <div class="title-package mind">
+              <img src="/stones/mind.png" alt="" />
+              <div class="text">
+                Mind Stone (Bronze)
+              </div>
+              <img src="/stones/mind.png" alt="" />
+            </div>
             <div class="sponsors">
               <div class="item">
                 <a href="https://www.aerow.group" target="_blank">
@@ -256,15 +293,59 @@ export default {};
     background-size: var(--size), var(--size), var(--size), var(--size),
       var(--size), var(--size);
   }
+
+  @media screen and (max-width: 1024px) {
+    --size: 300px;
+    --side-padding: 1%;
+    --power-y: 5%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 87%;
+  }
+  @media screen and (min-width: 1025px) {
+    --size: 350px;
+    --side-padding: 3%;
+    --power-y: 3%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 91%;
+  }
+  @media screen and (min-width: 1400px) {
+    --size: 500px;
+    --side-padding: 3%;
+    --power-y: 3%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 91%;
+  }
 }
 
 .list {
   margin-top: 30px;
   .group {
+    margin-bottom: 30px;
+
     .title-package {
       font-family: var(--font-bangers);
       font-size: 40px;
       margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .text {
+        margin: 0 20px;
+      }
+
+      img {
+        height: 50px;
+      }
 
       &.power,
       &.space,
@@ -272,7 +353,7 @@ export default {};
       &.soul,
       &.time,
       &.mind {
-        text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
+        // text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
       }
 
       &.power {
@@ -336,6 +417,8 @@ export default {};
     &.power {
       .sponsors {
         .item {
+          width: 23%;
+
           img {
             width: 100%;
           }
@@ -345,7 +428,8 @@ export default {};
     &.space {
       .sponsors {
         .item {
-          width: 25%;
+          width: 28%;
+
           img {
             width: 100%;
           }
@@ -355,9 +439,9 @@ export default {};
     &.reality {
       .sponsors {
         .item {
-          width: 20%;
+          width: 22%;
           img {
-            width: 90%;
+            width: 85%;
           }
         }
       }
@@ -367,7 +451,7 @@ export default {};
         .item {
           width: 20%;
           img {
-            width: 85%;
+            width: 93%;
           }
         }
       }
@@ -377,7 +461,7 @@ export default {};
         .item {
           width: 20%;
           img {
-            width: 80%;
+            width: 85%;
           }
         }
       }
@@ -400,6 +484,119 @@ export default {};
           img {
             width: 95%;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    .group {
+      .title-package {
+        font-size: 30px;
+        margin-bottom: 30px;
+
+        .text {
+          margin: 0 20px;
+        }
+      }
+      .sponsors {
+        .item {
+          width: 25%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      &.power {
+        .sponsors {
+          .item {
+            width: 40%;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &.space {
+        .sponsors {
+          .item {
+            width: 40%;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &.reality {
+        .sponsors {
+          .item {
+            width: 34%;
+            img {
+              width: 85%;
+            }
+          }
+        }
+      }
+      &.soul {
+        .sponsors {
+          .item {
+            width: 32%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &.time {
+        .sponsors {
+          .item {
+            width: 35%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &.mind {
+        .sponsors {
+          .item {
+            width: 30%;
+            img {
+              width: 75%;
+            }
+          }
+        }
+      }
+
+      &.internet {
+        .sponsors {
+          .item {
+            width: 28%;
+            img {
+              width: 95%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .list {
+    .group {
+      .title-package {
+        font-size: 28px;
+        margin-bottom: 30px;
+
+        .text {
+          margin: 0 20px;
         }
       }
     }
