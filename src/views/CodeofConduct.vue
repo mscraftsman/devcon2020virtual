@@ -106,6 +106,8 @@
 
   img {
     margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
     display: block;
   }
 

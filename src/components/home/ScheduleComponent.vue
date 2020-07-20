@@ -1061,22 +1061,30 @@ export default {
 
   .close__button {
     height: 50px;
+    width: 50px;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     position: absolute;
     right: 0;
     top: 0;
+    margin-right: 35px;
 
     button {
       height: 40px;
-      margin-right: 20px;
+      width: 40px;
+      margin-right: 30px;
       background: none;
       border: 0;
       cursor: pointer;
+      display: block;
+      position: relative;
+      outline: none;
 
       img {
         height: 30px;
+        width: 30px;
+        position: fixed;
       }
     }
   }
@@ -1441,7 +1449,9 @@ export default {
         .left__wrapper {
           h3 {
             font-size: 35px;
+            margin-top: 30px;
           }
+
           .location__time {
             font-size: 14px;
             display: block;
@@ -1459,6 +1469,8 @@ export default {
 
         .right__wrapper {
           .author__information {
+            padding-top: 70px;
+
             &.multiple {
               .speaker {
               }
@@ -1503,6 +1515,7 @@ export default {
         .left__wrapper {
           h3 {
             font-size: 35px;
+            margin-top: 60px;
           }
           .location__time {
             font-size: 14px;
@@ -1521,6 +1534,8 @@ export default {
 
         .right__wrapper {
           .author__information {
+            padding: 20px;
+
             &.multiple {
               .speaker {
               }
