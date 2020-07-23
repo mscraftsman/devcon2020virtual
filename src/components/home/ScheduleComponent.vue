@@ -5,7 +5,10 @@
       <div class="container__fw">
         <div class="title__section">
           <div class="sub-text">What's on the menu</div>
-          <div class="title">Schedule</div>
+          <div class="title">
+            Schedule
+            <span class="gmt">(GMT +4)</span>
+          </div>
         </div>
 
         <!-- <img class="schedule-wf" src="/schedule.jpg" alt /> -->
@@ -17,23 +20,17 @@
                 class="day-item"
                 :class="{ active: currentDay == 0 }"
                 @click="currentDay = 0"
-              >
-                Day 1
-              </div>
+              >Day 1</div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 1 }"
                 @click="currentDay = 1"
-              >
-                Day 2
-              </div>
+              >Day 2</div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 2 }"
                 @click="currentDay = 2"
-              >
-                Day 3
-              </div>
+              >Day 3</div>
             </div>
 
             <div class="room-track">
@@ -50,9 +47,7 @@
                   :data-room="index"
                   v-for="(room, index) in displayedRooms"
                   :key="index"
-                >
-                  {{ roomRepo[room] }}
-                </css-grid-item>
+                >{{ roomRepo[room] }}</css-grid-item>
               </css-grid>
               <button title="next" v-if="isMobile" @click="next">&gt;</button>
             </div>
@@ -73,9 +68,7 @@
                   :style="timeStartCoordinate(time)"
                   :key="index"
                 >
-                  <span>
-                    {{ time }}
-                  </span>
+                  <span>{{ time }}</span>
                 </css-grid-item>
 
                 <!-- Programmes -->
@@ -91,14 +84,9 @@
                     class="session__block"
                     @click="openModal(programme.id, getRoomId(programme))"
                   >
-                    <div class="title">
-                      {{ checkLength(programme.title) }}
-                    </div>
+                    <div class="title">{{ checkLength(programme.title) }}</div>
 
-                    <div
-                      v-if="programme.speakers.length > 0"
-                      class="speaker__info"
-                    >
+                    <div v-if="programme.speakers.length > 0" class="speaker__info">
                       <template
                         v-if="
                           programme.speakers && programme.speakers.length == 1
@@ -110,14 +98,9 @@
                           class="speaker"
                         >
                           <div class="image">
-                            <img
-                              :src="speakersById[speaker.id].profilePicture"
-                              :alt="speaker.name"
-                            />
+                            <img :src="speakersById[speaker.id].profilePicture" :alt="speaker.name" />
                           </div>
-                          <div class="info">
-                            {{ checkNameLength(speaker.name) }}
-                          </div>
+                          <div class="info">{{ checkNameLength(speaker.name) }}</div>
                         </div>
                       </template>
                       <template
@@ -138,7 +121,7 @@
                             />
                             <!-- <div class="pop">
                               {{ speaker.name }}
-                            </div> -->
+                            </div>-->
                           </div>
                         </div>
                       </template>
@@ -148,7 +131,7 @@
                     :to="{ name: 'session', params: { id: programme.id } }"
                     class="session__block"
                   >
-                  </router-link> -->
+                  </router-link>-->
                 </css-grid-item>
               </css-grid>
             </div>
@@ -167,9 +150,7 @@
                   :data-room="index"
                   v-for="(room, index) in displayedRooms"
                   :key="index"
-                >
-                  {{ roomRepo[room] }}
-                </css-grid-item>
+                >{{ roomRepo[room] }}</css-grid-item>
               </css-grid>
               <button title="next" v-if="isMobile" @click="next">&gt;</button>
             </div>
@@ -179,23 +160,17 @@
                 class="day-item"
                 :class="{ active: currentDay == 0 }"
                 @click="currentDay = 0"
-              >
-                Day 1
-              </div>
+              >Day 1</div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 1 }"
                 @click="currentDay = 1"
-              >
-                Day 2
-              </div>
+              >Day 2</div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 2 }"
                 @click="currentDay = 2"
-              >
-                Day 3
-              </div>
+              >Day 3</div>
             </div>
           </div>
           <ViewportListener v-model="viewport" />
@@ -222,15 +197,13 @@
           <div class="location__time">
             <div class="location">
               <span class="icon">
-                <img src="/location.svg" alt="" />
+                <img src="/location.svg" alt />
               </span>
-              <span class="data">
-                {{ modal_info.room }}
-              </span>
+              <span class="data">{{ modal_info.room }}</span>
             </div>
             <div class="time">
               <span class="icon">
-                <img src="/time.svg" alt="" />
+                <img src="/time.svg" alt />
               </span>
               <span class="data">
                 {{ getDay(modal_info.startsAt) }}
@@ -252,37 +225,24 @@
               },
             ]"
           >
-            <div
-              class="speaker"
-              v-for="(speaker, index) in modal_info.speakers"
-              :key="index"
-            >
+            <div class="speaker" v-for="(speaker, index) in modal_info.speakers" :key="index">
               <div class="profile__name">
                 <div class="image">
-                  <img
-                    :src="speakersById[speaker.id].profilePicture"
-                    :alt="speaker.name"
-                  />
+                  <img :src="speakersById[speaker.id].profilePicture" :alt="speaker.name" />
                 </div>
                 <div class="info">
-                  <div class="name">
-                    {{ speaker.name }}
-                  </div>
+                  <div class="name">{{ speaker.name }}</div>
                   <div
                     class="profession"
                     v-if="speakersById[speaker.id].tagLine"
-                  >
-                    {{ speakersById[speaker.id].tagLine }}
-                  </div>
+                  >{{ speakersById[speaker.id].tagLine }}</div>
                 </div>
               </div>
               <div class="bio">
                 <p v-html="speakersById[speaker.id].bio"></p>
               </div>
               <div class="social">
-                <template
-                  v-for="(social, index) in speakersById[speaker.id].links"
-                >
+                <template v-for="(social, index) in speakersById[speaker.id].links">
                   <a
                     :href="social.url"
                     target="_blank"
@@ -361,25 +321,16 @@ export default {
       schedule_height: 50,
       times: [
         "09:00",
-        "09:30",
         "10:00",
-        "10:30",
         "11:00",
-        "11:30",
         "12:00",
-        "12:30",
         "13:00",
-        "13:30",
         "14:00",
-        "14:30",
         "15:00",
-        "15:30",
         "16:00",
-        "16:30",
-        "17:00",
-        "17:30",
+        "17:00"
       ],
-      MINUTES_TO_EIGHT_OCLOCK: 8 * 67,
+      MINUTES_TO_EIGHT_OCLOCK: 9 * 60,
       timeStart: 0,
       timeSpan: 48,
       timeScale: 5,
@@ -388,17 +339,17 @@ export default {
         r12900: "Batcave",
         r12901: "Avengers Tower",
         r12902: "New Asgard",
-        r12903: "Kryptone",
+        r12903: "Kryptone"
       },
       availableRooms: [
         { id: "r12900", index: 0 },
         { id: "r12901", index: 1 },
         { id: "r12902", index: 2 },
-        { id: "r12903", index: 3 },
+        { id: "r12903", index: 3 }
       ],
       currentDay: 0,
       currentRoom: { id: "r12900", index: 0 },
-      modal_info: {},
+      modal_info: {}
     };
   },
   methods: {
@@ -434,12 +385,12 @@ export default {
       let hours = parseInt(temp[0]) * 60;
       let result = hours + minutes;
       // let duration = "30";
-      let duration = "30";
+      let duration = "60";
       const offsetResult = result - this.MINUTES_TO_EIGHT_OCLOCK;
 
       return {
-        top: offsetResult * (this.timeScale * 0.7) + "px",
-        height: duration * (this.timeScale * 0.7) + "px",
+        top: offsetResult * (this.timeScale * 0.6) + "px",
+        height: duration * (this.timeScale * 0.6) + "px"
       };
     },
     // Takes a programme object
@@ -458,8 +409,8 @@ export default {
       let endCoordinate = endHours + endMinutes - this.MINUTES_TO_EIGHT_OCLOCK;
       let duration = endCoordinate - startCoordinate;
       return {
-        top: startCoordinate * (this.timeScale * 0.7) + "px",
-        height: duration * (this.timeScale * 0.7) + "px",
+        top: startCoordinate * (this.timeScale * 0.6) + "px",
+        height: duration * (this.timeScale * 0.73) + "px"
       };
     },
     next() {
@@ -469,7 +420,7 @@ export default {
       this.changeRoom(false);
     },
     changeRoom(next) {
-      const currentIndex = this.availableRooms.findIndex((room) => {
+      const currentIndex = this.availableRooms.findIndex(room => {
         return room.id === this.currentRoom.id;
       });
       const prev = !next;
@@ -494,7 +445,7 @@ export default {
         this.currentRoom = this.availableRooms[prevIndex];
         return;
       }
-    },
+    }
   },
   computed: {
     timeEnd() {
@@ -504,7 +455,7 @@ export default {
       sessions: "getSessions",
       speakers: "getSpeakers",
       speakersById: "getSpeakersById",
-      sessionsById: "getSessionsById",
+      sessionsById: "getSessionsById"
     }),
     currentDaySessions() {
       let result = null;
@@ -521,13 +472,13 @@ export default {
         return {
           columns: ["50px", "1fr"],
           rows: ["1fr"],
-          areas: [["Time", this.currentRoom.id]],
+          areas: [["Time", this.currentRoom.id]]
         };
       }
       return {
         columns: ["50px", "1fr", "1fr", "1fr", "1fr"],
         rows: ["1fr"],
-        areas: [["Time", "r12900", "r12901", "r12902", "r12903"]],
+        areas: [["Time", "r12900", "r12901", "r12902", "r12903"]]
       };
     },
     displayedRooms() {
@@ -542,7 +493,7 @@ export default {
         return [];
       }
       if (this.isMobile) {
-        return this.currentDaySessions.filter((session) => {
+        return this.currentDaySessions.filter(session => {
           // * Keep coercion (`==` instead of `===`) here. Please.
           // * Processing `this.currentRoom` directly here to trigger reactivity.
           // * The update is not triggered when declared in a variable.
@@ -550,7 +501,7 @@ export default {
         });
       }
       return this.currentDaySessions;
-    },
+    }
   },
   mounted() {
     // this.fetchSessions();
@@ -558,7 +509,7 @@ export default {
   components: {
     CssGrid,
     CssGridItem,
-    ViewportListener,
+    ViewportListener
   },
   async created() {
     const stats = this.$store.dispatch("FETCH_STATS");
@@ -577,7 +528,7 @@ export default {
       return;
     }
     Promise.allSettled(promises);
-  },
+  }
 };
 </script>
 
@@ -730,7 +681,7 @@ export default {
 
   .programme-track {
     // background: green;
-    height: 1900px;
+    height: 1630px;
     /*overflow-y: scroll;*/
     .programme-track-container {
       /*scroll-snap-type: y proximity;*/
