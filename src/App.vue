@@ -15,8 +15,8 @@ import FooterComponent from "@/components/shared/FooterComponent.vue";
 export default {
   components: {
     HeaderComponent,
-    FooterComponent,
-  },
+    FooterComponent
+  }
 };
 </script>
 
@@ -79,6 +79,10 @@ html {
     font-size: 70px;
     text-transform: uppercase;
     font-family: var(--font-bangers);
+
+    .gmt {
+      color: var(--platinium);
+    }
   }
 }
 
