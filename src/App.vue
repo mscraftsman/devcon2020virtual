@@ -79,10 +79,6 @@ html {
     font-size: 70px;
     text-transform: uppercase;
     font-family: var(--font-bangers);
-
-    .gmt {
-      color: var(--platinium);
-    }
   }
 }
 
