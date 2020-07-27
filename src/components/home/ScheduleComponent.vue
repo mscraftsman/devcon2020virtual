@@ -197,13 +197,13 @@
           <div class="location__time">
             <div class="location">
               <span class="icon">
-                <img src="/location.svg" alt />
+                <img src="/location.svg" alt="Location" />
               </span>
               <span class="data">{{ modal_info.room }}</span>
             </div>
             <div class="time">
               <span class="icon">
-                <img src="/time.svg" alt />
+                <img src="/time.svg" alt="Time" />
               </span>
               <span class="data">
                 {{ getDay(modal_info.startsAt) }}
@@ -251,7 +251,7 @@
                     :key="'twitter-' + index"
                     v-if="social.title == 'Twitter'"
                   >
-                    <img src="/icon/twitter.svg" alt />
+                    <img src="/icon/twitter.svg" alt="Twitter" />
                   </a>
                   <a
                     :href="social.url"
@@ -261,7 +261,7 @@
                     :key="'twitter-' + index"
                     v-if="social.title == 'Facebook'"
                   >
-                    <img src="/icon/facebook.svg" alt />
+                    <img src="/icon/facebook.svg" alt="Facebook" />
                   </a>
                   <a
                     :href="social.url"
@@ -271,7 +271,7 @@
                     :key="'twitter-' + index"
                     v-if="social.title == 'LinkedIn'"
                   >
-                    <img src="/icon/linkedin.svg" alt />
+                    <img src="/icon/linkedin.svg" alt="LinkedIn" />
                   </a>
                   <a
                     :href="social.url"
@@ -281,7 +281,7 @@
                     :key="'twitter-' + index"
                     v-if="social.title == 'Instagram'"
                   >
-                    <img src="/icon/instagram.svg" alt />
+                    <img src="/icon/instagram.svg" alt="Instagram" />
                   </a>
                   <a
                     :href="social.url"
@@ -291,7 +291,7 @@
                     :key="'twitter-' + index"
                     v-if="social.title == 'GitHub'"
                   >
-                    <img src="/icon/github.svg" alt />
+                    <img src="/icon/github.svg" alt="Github" />
                   </a>
                   <a
                     :href="social.url"
@@ -301,7 +301,7 @@
                     :key="'twitter-' + index"
                     v-if="social.title == 'Blog'"
                   >
-                    <img src="/icon/website.svg" alt />
+                    <img src="/icon/website.svg" alt="Website" />
                   </a>
                 </template>
               </div>

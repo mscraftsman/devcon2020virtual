@@ -5,7 +5,7 @@
         <div class="left__block">
           <router-link :to="{ name: 'Home' }" class="logo">
             <div class="mscc">
-              <img src="/MSCC-logo-inverted.svg" alt />
+              <img src="/MSCC-logo-inverted.svg" alt="MSCC logo" />
             </div>
             <div class="text">
               Virtual Developers Conference

@@ -11,7 +11,7 @@
         <div class="footer__content">
           <div class="top__wrapper">
             <div class="image">
-              <img src="/MSCC-logo-inverted.svg" alt />
+              <img src="/MSCC-logo-inverted.svg" alt="City Skyline" />
               <div class="mscc">Mauritius Software Craftsmanship Community</div>
             </div>
             <div class="social">
@@ -19,16 +19,16 @@
                 href="https://www.facebook.com/MauritiusSoftwareCraftsmanshipCommunity/"
                 class="social__icon"
               >
-                <img src="/icon/facebook.svg" alt />
+                <img src="/icon/facebook.svg" alt="MSCC on Facebook" />
               </a>
               <a href="https://twitter.com/mscraftsman" class="social__icon">
-                <img src="/icon/twitter.svg" alt />
+                <img src="/icon/twitter.svg" alt="MSCC on Twitter" />
               </a>
               <a href="https://www.linkedin.com/groups/5033639" class="social__icon">
-                <img src="/icon/linkedin.svg" alt />
+                <img src="/icon/linkedin.svg" alt="MSCC on LinkedIn" />
               </a>
               <a href="https://github.com/mscraftsman" class="social__icon">
-                <img src="/icon/github.svg" alt />
+                <img src="/icon/github.svg" alt="MSCC on Github" />
               </a>
             </div>
           </div>

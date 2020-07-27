@@ -12,7 +12,7 @@
       <h2>Be excellent to each other.</h2>
       <img
         src="https://www.mscc.mu/content/images/2018/12/be-excellent-to-each-other.jpg"
-        alt=""
+        alt="Be excellent to each other"
       />
       <p>You have our contact details in the emails we've sent.</p>
 
