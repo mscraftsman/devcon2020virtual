@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <IntroComponent />
+    <RegisterComponent />
     <TextComponent />
     <ScheduleComponent />
     <SponsorsComponent />
@@ -14,6 +15,7 @@ import SponsorsComponent from "@/components/home/SponsorsComponent";
 // import SponsorsComponent from "@/components/home/SponsorsComponentConf";
 // import SpeakersComponent from "@/components/home/SpeakersComponent";
 import TextComponent from "@/components/home/TextComponent";
+import RegisterComponent from "@/components/home/RegisterComponent";
 
 export default {
   name: "Home",
@@ -21,7 +23,8 @@ export default {
     IntroComponent,
     SponsorsComponent,
     TextComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    RegisterComponent
     // SpeakersComponent
   }
 };
