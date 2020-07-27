@@ -16,12 +16,12 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.liquidtelecom.com/" target="_blank">
+                <a href="https://www.liquidtelecom.com/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/liquid-telecom.png" alt />
                 </a>
               </div>
               <div class="item white-bg">
-                <a href="https://www.mcb.mu/" target="_blank">
+                <a href="https://www.mcb.mu/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/mcb.png" alt />
                 </a>
               </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.providus.mu" target="_blank">
+                <a href="https://www.providus.mu" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/providus.png" alt />
                 </a>
               </div>
@@ -55,37 +55,37 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.sdworx.com/" target="_blank">
+                <a href="https://www.sdworx.com/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/sd-worx.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://teamonite.mu" target="_blank">
+                <a href="https://teamonite.mu" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/teamonite.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.9thbit.co.za" target="_blank">
+                <a href="https://www.9thbit.co.za" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/9thbit.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://eventstore.org" target="_blank">
+                <a href="https://eventstore.org" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/event-store.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.iqera.com" target="_blank">
+                <a href="https://www.iqera.com" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/iqera.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="www.synthesis.co.za" target="_blank">
+                <a href="www.synthesis.co.za" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/synthesis.png" alt />
                 </a>
               </div>
               <div class="item white-bg">
-                <a href="https://www.swanforlife.com" target="_blank">
+                <a href="https://www.swanforlife.com" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/swan.png" alt />
                 </a>
               </div>
@@ -103,17 +103,17 @@
 
             <div class="sponsors">
               <div class="item">
-                <a href="https://corshamscience.com/" target="_blank">
+                <a href="https://corshamscience.com/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/corsham.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://group.net2be.com/about/" target="_blank">
+                <a href="https://group.net2be.com/about/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/nettobe.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.spoonconsulting.com" target="_blank">
+                <a href="https://www.spoonconsulting.com" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/spoon.png" alt />
                 </a>
               </div>
@@ -132,7 +132,7 @@
               <div class="item">
                 <a
                   href="https://www.unicitieducationhub.com/institutions/higher-education/supinfo-international-university"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <img src="/sponsors/supinfo.png" alt />
                 </a>
@@ -150,32 +150,32 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.aerow.group" target="_blank">
+                <a href="https://www.aerow.group" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/aerow.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="http://www.ncb.mu" target="_blank">
+                <a href="http://www.ncb.mu" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/ncb.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.astek.mu/en/" target="_blank">
+                <a href="https://www.astek.mu/en/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/astek.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="http://www.ios.mu/" target="_blank">
+                <a href="http://www.ios.mu/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/ios.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.frci.net" target="_blank">
+                <a href="https://www.frci.net" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/frci.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.graphicstemple.io/" target="_blank">
+                <a href="https://www.graphicstemple.io/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/gt.png" alt />
                 </a>
               </div>
@@ -186,7 +186,7 @@
             <div class="title-package happy">Happy Hour Partner</div>
             <div class="sponsors">
               <div class="item">
-                <a href="" target="_blank">
+                <a href="" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/mscc.png" alt />
                 </a>
               </div>
@@ -197,12 +197,12 @@
             <div class="title-package speaker">Speaker</div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.ceridian.com" target="_blank">
+                <a href="https://www.ceridian.com" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/ceridian.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://ringier.com/" target="_blank">
+                <a href="https://ringier.com/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/ringier.png" alt />
                 </a>
               </div>
@@ -213,12 +213,12 @@
             <div class="title-package media">Media Partner</div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.lsl.digital/" target="_blank">
+                <a href="https://www.lsl.digital/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/lsldigital.png" alt />
                 </a>
               </div>
               <div class="item">
-                <a href="https://ict.io/" target="_blank">
+                <a href="https://ict.io/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/ictio.png" alt />
                 </a>
               </div>
@@ -229,7 +229,7 @@
             <div class="title-package internet">Internet</div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.rogerscapital.mu/" target="_blank">
+                <a href="https://www.rogerscapital.mu/" target="_blank" rel="noopener noreferrer">
                   <img src="/sponsors/rogers-capital.png" alt />
                 </a>
               </div>

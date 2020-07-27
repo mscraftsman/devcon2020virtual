@@ -2,6 +2,7 @@
   <a
     class="atomic-logo"
     target="_blank"
+    rel="noopener noreferrer"
     :href="props.sponsor.url"
     :title="props.sponsor.partner + props.sponsor.slogan"
   >

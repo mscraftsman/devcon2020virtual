@@ -1,6 +1,6 @@
 <template>
   <div class="register__container">
-    <a href="https://bit.ly/RegDevCon" target="_blank" class="register__button">
+    <a href="https://bit.ly/RegDevCon" target="_blank" rel="noopener noreferrer" class="register__button">
       <img src="/register.png" alt="Register" class="image__btn" />
     </a>
   </div>

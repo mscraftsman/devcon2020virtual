@@ -15,7 +15,7 @@
         </div>
         <div class="right__block">
           <router-link :to="{ name: 'Code' }" class="header__button light">Code of conduct</router-link>
-          <a href="https://bit.ly/RegDevCon" target="_blank" class="header__button">Register</a>
+          <a href="https://bit.ly/RegDevCon" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>
         </div>
       </div>
     </div>

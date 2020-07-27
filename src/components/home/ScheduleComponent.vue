@@ -246,6 +246,7 @@
                   <a
                     :href="social.url"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="social__icon"
                     :key="'twitter-' + index"
                     v-if="social.title == 'Twitter'"
@@ -255,6 +256,7 @@
                   <a
                     :href="social.url"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="social__icon"
                     :key="'twitter-' + index"
                     v-if="social.title == 'Facebook'"
@@ -264,6 +266,7 @@
                   <a
                     :href="social.url"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="social__icon"
                     :key="'twitter-' + index"
                     v-if="social.title == 'LinkedIn'"
@@ -273,6 +276,7 @@
                   <a
                     :href="social.url"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="social__icon"
                     :key="'twitter-' + index"
                     v-if="social.title == 'Instagram'"
@@ -282,6 +286,7 @@
                   <a
                     :href="social.url"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="social__icon"
                     :key="'twitter-' + index"
                     v-if="social.title == 'GitHub'"
@@ -291,6 +296,7 @@
                   <a
                     :href="social.url"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="social__icon"
                     :key="'twitter-' + index"
                     v-if="social.title == 'Blog'"
