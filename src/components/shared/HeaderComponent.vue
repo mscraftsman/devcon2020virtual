@@ -14,10 +14,8 @@
           </router-link>
         </div>
         <div class="right__block">
-          <router-link :to="{ name: 'Code' }" class="header__button light"
-            >Code of conduct</router-link
-          >
-          <!-- <router-link to="/" class="header__button">Calendar +</router-link> -->
+          <router-link :to="{ name: 'Code' }" class="header__button light">Code of conduct</router-link>
+          <a href="https://bit.ly/RegDevCon" target="_blank" class="header__button">Register</a>
         </div>
       </div>
     </div>
@@ -84,19 +82,20 @@ export default {};
   .header__button {
     height: 40px;
     line-height: 40px;
-    background: white;
+    background: red;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 23px;
     margin-right: 10px;
-    width: 170px;
+    width: 120px;
 
     &.light {
       background: var(--titanium);
       color: white;
+      width: 170px;
     }
   }
 

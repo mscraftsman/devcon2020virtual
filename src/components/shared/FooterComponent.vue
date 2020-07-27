@@ -37,6 +37,9 @@
               <li>
                 <router-link :to="{ name: 'Code' }">Code of Conduct</router-link>
               </li>
+              <li>
+                <a href="https://bit.ly/RegDevCon" target="_blank" class="header__button">Register</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -104,6 +107,10 @@ export default {};
 
       .social__icon {
         margin-right: 30px;
+
+        &:last-child {
+          margin-right: 0;
+        }
 
         img {
           width: 25px;
