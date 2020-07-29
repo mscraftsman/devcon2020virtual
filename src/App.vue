@@ -1,8 +1,11 @@
 <template>
   <div id="app">
+    <a class="skip-link" href="#main">Skip to main</a>
     <HeaderComponent />
     <div class="main__view">
-      <router-view />
+      <main id="main">
+        <router-view />
+      </main>
     </div>
     <FooterComponent />
   </div>
@@ -80,6 +83,20 @@ html {
     text-transform: uppercase;
     font-family: var(--font-bangers);
   }
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 @media (max-width: 768px) {
