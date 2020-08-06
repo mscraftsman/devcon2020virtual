@@ -3,15 +3,13 @@
     <div class="container__fw">
       <div class="title__section">
         <div class="sub-text">WE'RE BACKED BY SOME BIG PLAYERS!</div>
-        <div class="title">Sponsors & Partners</div>
+        <h2 class="title">Sponsors & Partners</h2>
 
         <div class="list">
           <div class="group power">
             <div class="title-package power">
               <img src="/stones/power.png" alt="Power Stone" />
-              <div class="text">
-                Power stone (Diamond)
-              </div>
+              <div class="text">Power stone (Diamond)</div>
               <img src="/stones/power.png" alt="Power Stone" />
             </div>
             <div class="sponsors">
@@ -31,9 +29,7 @@
           <div class="group space">
             <div class="title-package space">
               <img src="/stones/space.png" alt="Space Stone" />
-              <div class="text">
-                Space Stone (Titanium)
-              </div>
+              <div class="text">Space Stone (Titanium)</div>
               <img src="/stones/space.png" alt="Space Stone" />
             </div>
             <div class="sponsors">
@@ -48,9 +44,7 @@
           <div class="group reality">
             <div class="title-package reality">
               <img src="/stones/reality.png" alt="Reality Stone" />
-              <div class="text">
-                Reality Stone (Platinum)
-              </div>
+              <div class="text">Reality Stone (Platinum)</div>
               <img src="/stones/reality.png" alt="Reality Stone" />
             </div>
             <div class="sponsors">
@@ -76,7 +70,7 @@
               </div>
               <div class="item">
                 <a href="https://www.iqera.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/sponsors/iqera.png" alt=iQera />
+                  <img src="/sponsors/iqera.png" alt="iQera" />
                 </a>
               </div>
               <div class="item">
@@ -95,9 +89,7 @@
           <div class="group soul">
             <div class="title-package soul">
               <img src="/stones/soul.png" alt="Soul Stone" />
-              <div class="text">
-                Soul Stone (Gold)
-              </div>
+              <div class="text">Soul Stone (Gold)</div>
               <img src="/stones/soul.png" alt="Soul Stone" />
             </div>
 
@@ -123,16 +115,15 @@
           <div class="group time">
             <div class="title-package time">
               <img src="/stones/time.png" alt="Time Stone" />
-              <div class="text">
-                Time Stone (Silver)
-              </div>
+              <div class="text">Time Stone (Silver)</div>
               <img src="/stones/time.png" alt="Time Stone" />
             </div>
             <div class="sponsors">
               <div class="item">
                 <a
                   href="https://www.unicitieducationhub.com/institutions/higher-education/supinfo-international-university"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img src="/sponsors/supinfo.png" alt="SUPINFO International" />
                 </a>
@@ -143,9 +134,7 @@
           <div class="group mind">
             <div class="title-package mind">
               <img src="/stones/mind.png" alt="Mind Stone" />
-              <div class="text">
-                Mind Stone (Bronze)
-              </div>
+              <div class="text">Mind Stone (Bronze)</div>
               <img src="/stones/mind.png" alt="Mind Stone" />
             </div>
             <div class="sponsors">

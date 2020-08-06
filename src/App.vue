@@ -80,6 +80,8 @@ html {
 
   .title {
     font-size: 70px;
+    margin: 0;
+    font-weight: 300;
     text-transform: uppercase;
     font-family: var(--font-bangers);
   }

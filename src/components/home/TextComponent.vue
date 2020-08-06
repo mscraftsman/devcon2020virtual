@@ -3,7 +3,7 @@
     <div class="container__fw">
       <div class="title__section">
         <div class="sub-text">Innovation. Technology. Community.</div>
-        <div class="title">Why a Virtual Developers Conference this year?</div>
+        <h2 class="title">Why a Virtual Developers Conference this year?</h2>
         <div class="content">
           <p>
             As you are aware, we are at the moment going through a very hard

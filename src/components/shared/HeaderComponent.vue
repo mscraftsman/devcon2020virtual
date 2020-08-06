@@ -7,10 +7,10 @@
             <div class="mscc">
               <img src="/MSCC-logo-inverted.svg" alt="MSCC logo" />
             </div>
-            <div class="text">
+            <h1 class="text">
               Virtual Developers Conference
               <span class="year">2020</span>
-            </div>
+            </h1>
           </router-link>
         </div>
         <div class="right__block">
@@ -20,8 +20,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="header__button"
-            >Register</a
-          >
+          >Register</a>
         </div>
       </div>
     </div>
@@ -76,6 +75,9 @@ export default {};
     }
 
     .text {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 300;
     }
   }
 

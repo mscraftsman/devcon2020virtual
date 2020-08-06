@@ -5,10 +5,10 @@
       <div class="container__fw">
         <div class="title__section">
           <div class="sub-text">What's on the menu</div>
-          <div class="title">
+          <h2 class="title">
             Schedule
             <span class="gmt">(GMT +4)</span>
-          </div>
+          </h2>
         </div>
 
         <!-- <img class="schedule-wf" src="/schedule.jpg" alt /> -->
