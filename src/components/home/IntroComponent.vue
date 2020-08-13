@@ -29,7 +29,7 @@ export default {};
 }
 
 .intro__container {
-  margin-top: 70px;
+  // margin-top: 70px;
   // background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   // background: var(--bronze);
 

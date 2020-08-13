@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <WakashioComponent />
     <IntroComponent />
     <RegisterComponent />
     <TextComponent />
@@ -10,6 +11,7 @@
 
 <script>
 import IntroComponent from "@/components/home/IntroComponent";
+import WakashioComponent from "@/components/home/WakashioComponent";
 import ScheduleComponent from "@/components/home/ScheduleComponent";
 import SponsorsComponent from "@/components/home/SponsorsComponent";
 // import SponsorsComponent from "@/components/home/SponsorsComponentConf";
@@ -21,6 +23,7 @@ export default {
   name: "Home",
   components: {
     IntroComponent,
+    WakashioComponent,
     SponsorsComponent,
     TextComponent,
     ScheduleComponent,
