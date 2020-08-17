@@ -22,8 +22,8 @@ function extractObject(entry) {
 }
 
 export const time = function(date) {
-  let time = new Date(date);
-  let hours = time.getHours();
+  let time = new Date(date + ".000Z");
+  let hours = time.getHours() - 4;
   hours = (hours + 24) % 24;
   let period = hours < 12 ? "AM" : "PM";
   hours = hours % 12 || hours;
