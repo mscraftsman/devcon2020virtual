@@ -406,12 +406,15 @@ export default {
     programmeStartCoordinate(programme) {
       console.log(programme);
 
-      let startMinutes = new Date(programme.startsAt).getMinutes();
-      let startHours = new Date(programme.startsAt).getHours() * 60;
+      console.log(programme.startsAt);
+
+      let startMinutes = new Date(programme.startsAt + ".000Z").getMinutes();
+      let startHours =
+        (new Date(programme.startsAt + ".000Z").getHours() - 4) * 60;
       let startCoordinate =
         startHours + startMinutes - this.MINUTES_TO_EIGHT_OCLOCK;
-      let endMinutes = new Date(programme.endsAt).getMinutes();
-      let endHours = new Date(programme.endsAt).getHours() * 60;
+      let endMinutes = new Date(programme.endsAt + ".000Z").getMinutes();
+      let endHours = (new Date(programme.endsAt + ".000Z").getHours() - 4) * 60;
       let endCoordinate = endHours + endMinutes - this.MINUTES_TO_EIGHT_OCLOCK;
       let duration = endCoordinate - startCoordinate;
       return {
