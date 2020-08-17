@@ -77,8 +77,10 @@
                   class="programme-item box"
                   v-for="(programme, index) in displayedSessions"
                   :style="programmeStartCoordinate(programme)"
+                  :data-index="index"
                   :room-id="getRoomId(programme)"
                   :key="index"
+                  :data-element="isKeynote(programme)"
                 >
                   <div
                     class="session__block"
@@ -403,6 +405,16 @@ export default {
     getRoomId(programme) {
       return programme.roomId;
     },
+    isKeynote(programme) {
+      if (
+        programme.startsAt == "2020-09-09T09:00:00" &&
+        programme.roomId == "12900"
+      ) {
+        return "keynote";
+      } else {
+        return "notkeynote";
+      }
+    },
     programmeStartCoordinate(programme) {
       console.log(programme);
 
@@ -709,6 +721,10 @@ export default {
 .programme-item {
   // width: 250px;
   /*border: 1px solid black;*/
+
+  &[data-element="keynote"] {
+    grid-area: r12900 / r12900 / r12903 / r12903 !important;
+  }
 }
 
 .time-item {
