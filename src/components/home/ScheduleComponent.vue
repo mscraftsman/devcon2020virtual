@@ -416,10 +416,8 @@ export default {
       }
     },
     programmeStartCoordinate(programme) {
-      console.log(programme);
-      console.log(programme.startsAt);
-
-      console.log(Date.getTimezoneOffset());
+      // console.log(programme);
+      // console.log(programme.startsAt);
 
       let offset =
         new Date(programme.startsAt + ".000Z").getTimezoneOffset() / 60;
