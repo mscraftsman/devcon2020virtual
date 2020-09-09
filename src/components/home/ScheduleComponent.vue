@@ -47,7 +47,16 @@
                   :data-room="index"
                   v-for="(room, index) in displayedRooms"
                   :key="index"
-                >{{ roomRepo[room] }}</css-grid-item>
+                  ><a
+                    :href="roomUrls[room]"
+                    class="room-item"
+                    :data-room="index"
+                    alt="Youtube live stream"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ roomRepo[room] }}</a
+                  >
+                </css-grid-item>
               </css-grid>
               <button title="next" v-if="isMobile" @click="next">&gt;</button>
             </div>
@@ -152,7 +161,16 @@
                   :data-room="index"
                   v-for="(room, index) in displayedRooms"
                   :key="index"
-                >{{ roomRepo[room] }}</css-grid-item>
+                  ><a
+                    :href="roomUrls[room]"
+                    class="room-item"
+                    :data-room="index"
+                    alt="Youtube live stream"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ roomRepo[room] }}</a
+                  >
+                </css-grid-item>
               </css-grid>
               <button title="next" v-if="isMobile" @click="next">&gt;</button>
             </div>
@@ -348,6 +366,12 @@ export default {
         r12901: "Avengers Tower",
         r12902: "New Asgard",
         r12903: "Kryptone"
+      },
+      roomUrls: {
+        r12900: "https://youtu.be/9Xty-Ghtih8",
+        r12901: "https://youtu.be/nDxB9zZAFx8",
+        r12902: "https://youtu.be/0nO3UFNZ-Ng",
+        r12903: "https://youtu.be/BKCYNYJQVs4"
       },
       availableRooms: [
         { id: "r12900", index: 0 },
@@ -687,6 +711,7 @@ export default {
 
     .room-item {
       font-size: 30px;
+      text-decoration: none;
 
       &[data-room="0"] {
         color: var(--red);
