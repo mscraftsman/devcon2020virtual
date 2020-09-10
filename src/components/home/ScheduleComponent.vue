@@ -368,10 +368,10 @@ export default {
         r12903: "Kryptone"
       },
       roomUrls: {
-        r12900: "https://youtu.be/9Xty-Ghtih8",
-        r12901: "https://youtu.be/nDxB9zZAFx8",
-        r12902: "https://youtu.be/0nO3UFNZ-Ng",
-        r12903: "https://youtu.be/BKCYNYJQVs4"
+        r12900: "https://youtu.be/5DSd18oTOns",
+        r12901: "https://youtu.be/lCSG9eX6HoE",
+        r12902: "https://youtu.be/Rr9PI0ZVvdY",
+        r12903: "https://youtu.be/0fcTK4MmqJo"
       },
       availableRooms: [
         { id: "r12900", index: 0 },
