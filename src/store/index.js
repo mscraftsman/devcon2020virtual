@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -33,7 +31,7 @@ export default new Vuex.Store({
     sessionsById: [],
     sponsors: [],
     stats: [],
-    credits: [],
+    credits: []
   },
 
   getters: {
@@ -51,7 +49,7 @@ export default new Vuex.Store({
 
     // ! can it be a variation of `getSpeakers`?
     getFeaturedSpeakers(state) {
-      return state.speakers.filter((speaker) => speaker.isTopSpeaker);
+      return state.speakers.filter(speaker => speaker.isTopSpeaker);
     },
 
     getSessionsReady(state) {
@@ -81,7 +79,7 @@ export default new Vuex.Store({
 
     getCredits(state) {
       return state.credits;
-    },
+    }
   },
 
   mutations: {
@@ -119,7 +117,7 @@ export default new Vuex.Store({
 
     [SET_SPONSORS](state, sponsors) {
       state.sponsors = sponsors;
-    },
+    }
   },
 
   actions: {
@@ -142,7 +140,7 @@ export default new Vuex.Store({
 
       commit(SET_SPEAKERS, payload);
 
-      let groupById = (payload || []).reduce(function(r, a) {
+      let groupById = (payload || []).reduce(function (r, a) {
         r[a.id] = r[a.id] || [];
         r[a.id] = a;
         return r;
@@ -159,34 +157,30 @@ export default new Vuex.Store({
     },
 
     async [FETCH_SESSIONS]({ commit }) {
-      return new Promise(async (resolve, reject) => {
-        const URL = require("@/constants/urls.json")["sessionize-sessions"];
+      const URL = require("@/constants/urls.json")["sessionize-sessions"];
 
-        let payload;
+      let payload;
 
-        try {
-          payload = await fetchJson(URL);
-        } catch (error) {
-          reject(
-            new Error(
-              "Error should be caught by Vue global error handler." + error
-            )
-          );
-        }
-
-        commit(SET_SESSIONS, payload);
-
-        const flatSessionList = (payload || []).flatMap(
-          ({ sessions }) => sessions
+      try {
+        payload = await fetchJson(URL);
+      } catch (error) {
+        throw new Error(
+          "Error should be caught by Vue global error handler." + error
         );
-        let groupedById = (flatSessionList || []).reduce(
-          groupById,
-          Object.create(null)
-        );
-        commit(SET_SESSIONS_BY_ID, groupedById);
+      }
 
-        resolve(payload);
-      });
+      commit(SET_SESSIONS, payload);
+
+      const flatSessionList = (payload || []).flatMap(
+        ({ sessions }) => sessions
+      );
+      let groupedById = (flatSessionList || []).reduce(
+        groupById,
+        Object.create(null)
+      );
+      commit(SET_SESSIONS_BY_ID, groupedById);
+
+      return payload;
     },
 
     async [FETCH_SPONSORS]({ commit }) {
@@ -194,8 +188,8 @@ export default new Vuex.Store({
 
       let entry;
       try {
-        const { feed } = await fetchJson(URL);
-        entry = feed.entry;
+        const data = await fetchJson(URL);
+        entry = data && data.feed ? data.feed.entry : [];
       } catch (error) {
         throw new Error(
           "Error should be caught by Vue global error handler." + error
@@ -212,8 +206,8 @@ export default new Vuex.Store({
 
       let entry;
       try {
-        const { feed } = await fetchJson(URL);
-        entry = feed.entry;
+        const data = await fetchJson(URL);
+        entry = data && data.feed ? data.feed.entry : [];
       } catch (error) {
         throw new Error(
           "Error should be caught by Vue global error handler." + error
@@ -230,8 +224,8 @@ export default new Vuex.Store({
 
       let entry;
       try {
-        const { feed } = await fetchJson(URL);
-        entry = feed.entry;
+        const data = await fetchJson(URL);
+        entry = data && data.feed ? data.feed.entry : [];
       } catch (error) {
         throw new Error(
           "Error should be caught by Vue global error handler." + error
@@ -241,6 +235,6 @@ export default new Vuex.Store({
       const credits = extractData(entry);
       commit(SET_CREDITS, credits);
       return credits;
-    },
-  },
+    }
+  }
 });

@@ -4,16 +4,16 @@
  * @returns an array of objects that follows the expected format.
  */
 export function extractData(entries) {
-  return entries.map(extractObject);
+  return (entries || []).map(extractObject);
 }
 
 function extractObject(entry) {
-  const fieldNameList = Object.keys(entry).filter((fieldName) =>
+  const fieldNameList = Object.keys(entry).filter(fieldName =>
     fieldName.includes("gsx$")
   );
 
   const formattedObjet = {};
-  fieldNameList.forEach((fieldName) => {
+  fieldNameList.forEach(fieldName => {
     const trimmedName = fieldName.replace("gsx$", "");
     formattedObjet[trimmedName] = entry[fieldName][`$t`];
   });
@@ -21,7 +21,7 @@ function extractObject(entry) {
   return formattedObjet;
 }
 
-export const time = function(date) {
+export const time = function (date) {
   let time = new Date(date + ".000Z");
   let hours = time.getHours() - 4;
   hours = (hours + 24) % 24;
@@ -31,7 +31,7 @@ export const time = function(date) {
   return hours + ":" + minutes + " " + period;
 };
 
-export const timeSafe = function(date) {
+export const timeSafe = function (date) {
   // let time = new Date(date);
   // let hours = time.getHours();
   // hours = (hours + 24) % 24;
@@ -44,7 +44,7 @@ export const timeSafe = function(date) {
   let x = date
     .split("T")[1]
     .split(":")
-    .map((r) => parseInt(r, 10));
+    .map(r => parseInt(r, 10));
   let y =
     (x[0] < 12 ? "AM" : "PM") +
     x[0] +
@@ -54,7 +54,7 @@ export const timeSafe = function(date) {
   // return period + hours + minutes;
 };
 
-export const getDay = function(str) {
+export const getDay = function (str) {
   const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   let day = new Date(str);
   return days[day.getDay()];
@@ -84,7 +84,7 @@ export function groupById(r, a) {
 }
 
 export function groupBy(objectArray, property) {
-  return objectArray.reduce(function(acc, obj) {
+  return objectArray.reduce(function (acc, obj) {
     var key = obj[property];
     if (!acc[key]) {
       acc[key] = [];
@@ -97,18 +97,18 @@ export function groupBy(objectArray, property) {
 export function sortBy(list, rules) {
   const isArray = Array.isArray(list);
   if (isArray) {
-    return list.sort(list, rules);
+    return list.sort(rules);
   }
 
   const entries = Object.entries(list);
 
-  const rulesMap = entries.map((entry) => {
+  const rulesMap = entries.map(entry => {
     const [label, group] = entry;
     const order = rules[label];
     return { label, group, order };
   });
 
-  const sortedList = rulesMap.sort(function(a, b) {
+  const sortedList = rulesMap.sort(function (a, b) {
     var orderA = a.order;
     var orderB = b.order;
     if (orderA < orderB) {
