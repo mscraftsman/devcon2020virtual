@@ -1,8 +1,17 @@
 <template>
   <footer class="global__footer">
     <div class="slanted__svg">
-      <svg data-v-71f627fa viewBox="0 0 100 100" preserveAspectRatio="none" class="slanted">
-        <polygon data-v-71f627fa points="0,0 100,100 100,100, 0,100" pointer-events="none" />
+      <svg
+        data-v-71f627fa
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        class="slanted"
+      >
+        <polygon
+          data-v-71f627fa
+          points="0,0 100,100 100,100, 0,100"
+          pointer-events="none"
+        />
       </svg>
       <img class="building" src="/buildings.png" alt />
     </div>
@@ -24,7 +33,10 @@
               <a href="https://twitter.com/mscraftsman" class="social__icon">
                 <img src="/icon/twitter.svg" alt="MSCC on Twitter" />
               </a>
-              <a href="https://www.linkedin.com/groups/5033639" class="social__icon">
+              <a
+                href="https://www.linkedin.com/groups/5033639"
+                class="social__icon"
+              >
                 <img src="/icon/linkedin.svg" alt="MSCC on LinkedIn" />
               </a>
               <a href="https://github.com/mscraftsman" class="social__icon">
@@ -35,10 +47,18 @@
           <div class="bottom__wrapper">
             <ul>
               <li>
-                <router-link :to="{ name: 'Code' }">Code of Conduct</router-link>
+                <router-link :to="{ name: 'Code' }"
+                  >Code of Conduct</router-link
+                >
               </li>
               <li>
-                <a href="https://bit.ly/RegDevCon" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>
+                <a
+                  href="https://bit.ly/RegDevCon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="header__button"
+                  >Register</a
+                >
               </li>
             </ul>
           </div>

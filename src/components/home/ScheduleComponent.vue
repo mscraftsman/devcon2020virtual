@@ -1,4 +1,3 @@
-// prettier-ignore
 <template>
   <div class="schedule__container">
     <div class="schedule__superheros">
@@ -20,17 +19,23 @@
                 class="day-item"
                 :class="{ active: currentDay == 0 }"
                 @click="currentDay = 0"
-              >Day 1</div>
+              >
+                Day 1
+              </div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 1 }"
                 @click="currentDay = 1"
-              >Day 2</div>
+              >
+                Day 2
+              </div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 2 }"
                 @click="currentDay = 2"
-              >Day 3</div>
+              >
+                Day 3
+              </div>
             </div>
 
             <div class="room-track">
@@ -97,7 +102,10 @@
                   >
                     <div class="title">{{ checkLength(programme.title) }}</div>
 
-                    <div v-if="programme.speakers.length > 0" class="speaker__info">
+                    <div
+                      v-if="programme.speakers.length > 0"
+                      class="speaker__info"
+                    >
                       <template
                         v-if="
                           programme.speakers && programme.speakers.length == 1
@@ -108,10 +116,15 @@
                           :key="index"
                           class="speaker"
                         >
-                          <div class="image">
-                            <img :src="speakersById[speaker.id].profilePicture" :alt="speaker.name" />
+                          <div class="image" v-if="speakersById[speaker.id]">
+                            <img
+                              :src="speakersById[speaker.id].profilePicture"
+                              :alt="speaker.name"
+                            />
                           </div>
-                          <div class="info">{{ checkNameLength(speaker.name) }}</div>
+                          <div class="info">
+                            {{ checkNameLength(speaker.name) }}
+                          </div>
                         </div>
                       </template>
                       <template
@@ -124,7 +137,7 @@
                           :key="index"
                           class="speaker multiple"
                         >
-                          <div class="image">
+                          <div class="image" v-if="speakersById[speaker.id]">
                             <img
                               :src="speakersById[speaker.id].profilePicture"
                               :alt="speaker.name"
@@ -180,17 +193,23 @@
                 class="day-item"
                 :class="{ active: currentDay == 0 }"
                 @click="currentDay = 0"
-              >Day 1</div>
+              >
+                Day 1
+              </div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 1 }"
                 @click="currentDay = 1"
-              >Day 2</div>
+              >
+                Day 2
+              </div>
               <div
                 class="day-item"
                 :class="{ active: currentDay == 2 }"
                 @click="currentDay = 2"
-              >Day 3</div>
+              >
+                Day 3
+              </div>
             </div>
           </div>
           <ViewportListener v-model="viewport" />
@@ -241,28 +260,39 @@
             :class="[
               'author__information',
               {
-                multiple: modal_info.speakers && modal_info.speakers.length > 1,
-              },
+                multiple: modal_info.speakers && modal_info.speakers.length > 1
+              }
             ]"
           >
-            <div class="speaker" v-for="(speaker, index) in modal_info.speakers" :key="index">
-              <div class="profile__name">
+            <div
+              class="speaker"
+              v-for="(speaker, index) in modal_info.speakers"
+              :key="index"
+            >
+              <div class="profile__name" v-if="speakersById[speaker.id]">
                 <div class="image">
-                  <img :src="speakersById[speaker.id].profilePicture" :alt="speaker.name" />
+                  <img
+                    :src="speakersById[speaker.id].profilePicture"
+                    :alt="speaker.name"
+                  />
                 </div>
                 <div class="info">
                   <div class="name">{{ speaker.name }}</div>
                   <div
                     class="profession"
                     v-if="speakersById[speaker.id].tagLine"
-                  >{{ speakersById[speaker.id].tagLine }}</div>
+                  >
+                    {{ speakersById[speaker.id].tagLine }}
+                  </div>
                 </div>
               </div>
-              <div class="bio">
+              <div class="bio" v-if="speakersById[speaker.id]">
                 <p v-html="speakersById[speaker.id].bio"></p>
               </div>
-              <div class="social">
-                <template v-for="(social, index) in speakersById[speaker.id].links">
+              <div class="social" v-if="speakersById[speaker.id]">
+                <template
+                  v-for="(social, index) in speakersById[speaker.id].links"
+                >
                   <a
                     :href="social.url"
                     target="_blank"
@@ -278,7 +308,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="social__icon"
-                    :key="'twitter-' + index"
+                    :key="'facebook-' + index"
                     v-if="social.title == 'Facebook'"
                   >
                     <img src="/icon/facebook.svg" alt="Facebook" />
@@ -288,7 +318,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="social__icon"
-                    :key="'twitter-' + index"
+                    :key="'linkedin-' + index"
                     v-if="social.title == 'LinkedIn'"
                   >
                     <img src="/icon/linkedin.svg" alt="LinkedIn" />
@@ -298,7 +328,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="social__icon"
-                    :key="'twitter-' + index"
+                    :key="'instagram-' + index"
                     v-if="social.title == 'Instagram'"
                   >
                     <img src="/icon/instagram.svg" alt="Instagram" />
@@ -308,7 +338,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="social__icon"
-                    :key="'twitter-' + index"
+                    :key="'github-' + index"
                     v-if="social.title == 'GitHub'"
                   >
                     <img src="/icon/github.svg" alt="Github" />
@@ -318,7 +348,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="social__icon"
-                    :key="'twitter-' + index"
+                    :key="'blog-' + index"
                     v-if="social.title == 'Blog'"
                   >
                     <img src="/icon/website.svg" alt="Website" />

@@ -14,13 +14,27 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.liquidtelecom.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="/sponsors/liquid-telecom.png" alt="Liquid Telecom" />
+                <a
+                  href="https://www.liquidtelecom.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/sponsors/liquid-telecom.png"
+                    alt="Liquid Telecom"
+                  />
                 </a>
               </div>
               <div class="item white-bg">
-                <a href="https://www.mcb.mu/" target="_blank" rel="noopener noreferrer">
-                  <img src="/sponsors/mcb.png" alt="The Mauritius Commercial Bank" />
+                <a
+                  href="https://www.mcb.mu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/sponsors/mcb.png"
+                    alt="The Mauritius Commercial Bank"
+                  />
                 </a>
               </div>
             </div>
@@ -34,7 +48,11 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.providus.mu" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.providus.mu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/providus.png" alt="Providus" />
                 </a>
               </div>
@@ -49,37 +67,65 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.sdworx.com/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.sdworx.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/sd-worx.png" alt="SD Worx" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://teamonite.mu" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://teamonite.mu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/teamonite.png" alt="Teamonite.mu" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.9thbit.co.za" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.9thbit.co.za"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/9thbit.png" alt="9th Bit" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://eventstore.org" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://eventstore.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/event-store.png" alt="Event Store" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.iqera.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.iqera.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/iqera.png" alt="iQera" />
                 </a>
               </div>
               <div class="item">
-                <a href="www.synthesis.co.za" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.synthesis.co.za"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/synthesis.png" alt="Synthesis" />
                 </a>
               </div>
               <div class="item white-bg">
-                <a href="https://www.swanforlife.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.swanforlife.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/swan.png" alt="SWAN" />
                 </a>
               </div>
@@ -95,17 +141,29 @@
 
             <div class="sponsors">
               <div class="item">
-                <a href="https://corshamscience.com/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://corshamscience.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/corsham.png" alt="Corsham" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://group.net2be.com/about/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://group.net2be.com/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/nettobe.png" alt="NetToBe" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.spoonconsulting.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.spoonconsulting.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/spoon.png" alt="Spoon Consulting" />
                 </a>
               </div>
@@ -125,7 +183,10 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/sponsors/supinfo.png" alt="SUPINFO International" />
+                  <img
+                    src="/sponsors/supinfo.png"
+                    alt="SUPINFO International"
+                  />
                 </a>
               </div>
             </div>
@@ -139,32 +200,59 @@
             </div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.aerow.group" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.aerow.group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/aerow.png" alt="Aerow ECM" />
                 </a>
               </div>
               <div class="item">
-                <a href="http://www.ncb.mu" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="http://www.ncb.mu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/ncb.png" alt="National Computer Board" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.astek.mu/en/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.astek.mu/en/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/astek.png" alt="Astek Mauritius" />
                 </a>
               </div>
               <div class="item">
-                <a href="http://www.ios.mu/" target="_blank" rel="noopener noreferrer">
-                  <img src="/sponsors/ios.png" alt="IOS Indian Ocean Software Ltd" />
+                <a
+                  href="http://www.ios.mu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/sponsors/ios.png"
+                    alt="IOS Indian Ocean Software Ltd"
+                  />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.frci.net" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.frci.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/frci.png" alt="FRCI" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://www.graphicstemple.io/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.graphicstemple.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/gt.png" alt="Graphics Temple" />
                 </a>
               </div>
@@ -186,12 +274,20 @@
             <div class="title-package speaker">Speaker</div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.ceridian.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.ceridian.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/ceridian.png" alt="Ceridian" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://ringier.com/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://ringier.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/ringier.png" alt="ringier" />
                 </a>
               </div>
@@ -202,12 +298,20 @@
             <div class="title-package media">Media Partner</div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.lsl.digital/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.lsl.digital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/lsldigital.png" alt="LSL Digital" />
                 </a>
               </div>
               <div class="item">
-                <a href="https://ict.io/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://ict.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/sponsors/ictio.png" alt="ict.io" />
                 </a>
               </div>
@@ -218,8 +322,15 @@
             <div class="title-package internet">Internet</div>
             <div class="sponsors">
               <div class="item">
-                <a href="https://www.rogerscapital.mu/" target="_blank" rel="noopener noreferrer">
-                  <img src="/sponsors/rogers-capital.png" alt="Rogers Capital" />
+                <a
+                  href="https://www.rogerscapital.mu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/sponsors/rogers-capital.png"
+                    alt="Rogers Capital"
+                  />
                 </a>
               </div>
             </div>
