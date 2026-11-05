@@ -12,7 +12,7 @@ Use your best judgment, and feel free to propose changes to this document in a p
 
 # 1 Theme : Comics
 
-[![Virtual Developers Conference 2020](https://conference.mscc.mu/github_thumbnail.png)](https://conference.mscc.mu/)
+[![Virtual Developers Conference 2020](https://2020.mscc.mu/github_thumbnail.png)](https://2020.mscc.mu/)
 
 # 2 Read the file below for how to contribute to this website.
 
